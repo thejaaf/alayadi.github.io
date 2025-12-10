@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>شركة الايادي المتحدة — الريادة في إنشاء المجمعات السكنية</title>
+
+  <!-- Cairo Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css" />
+  <meta name="theme-color" content="#0D0D0D" />
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <div class="logo-mark">أيادي</div>
+        <div class="brand-text">
+          <h1>شركة الايادي المتحدة</h1>
+          <p class="tagline">الريادة في إنشاء المجمعات السكنية منذ 2014</p>
+        </div>
+      </div>
+
+      <nav class="main-nav" aria-label="القائمة الرئيسية">
+        <a href="#home">الرئيسية</a>
+        <a href="#about">نبذة</a>
+        <a href="#projects">مشاريعنا</a>
+        <a href="#companies">شركاتنا</a>
+        <a href="#contact">تواصل معنا</a>
+        <a class="admin-link" href="admin.html">لوحة التحكم</a>
+      </nav>
+
+      <button class="nav-toggle" aria-label="قائمة">☰</button>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section id="home" class="hero" style="--hero-bg: url('https://images.unsplash.com/photo-1508057198894-247b23fe5ade?auto=format&fit=crop&w=1600&q=80')">
+    <div class="overlay"></div>
+    <div class="container hero-content">
+      <h2 class="hero-title">شركة الايادي المتحدة</h2>
+      <p class="hero-sub">الريادة في إنشاء المجمعات السكنية الحديثة — جودة، ثقة، وفخامة</p>
+      <a class="cta" href="#projects">عرض المشاريع</a>
+    </div>
+  </section>
+
+  <!-- SLIDER -->
+  <section class="slider-section container">
+    <div class="slider" id="projectSlider" aria-roledescription="slider">
+      <!-- slides injected by script.js -->
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="about container">
+    <div class="about-grid">
+      <div class="about-text">
+        <h3>نبذة عن الشركة</h3>
+        <p>
+          تأسست شركة الايادي المتحدة عام 2014، وتُعد أول شركة متخصصة في العراق بإنشاء المجمعات السكنية الحديثة.
+          تمتلك الشركة سلسلة مصانع وشركات داعمة لصناعة البناء، مما يجعلها من أكبر المجموعات العقارية إنتاجاً وتأثيراً في السوق العراقي.
+        </p>
+
+        <ul class="stats">
+          <li><strong id="stat-projects">—</strong><span>المشاريع</span></li>
+          <li><strong id="stat-companies">—</strong><span>الشركات التابعة</span></li>
+          <li><strong id="stat-beneficiaries">—</strong><span>عدد المستفيدين</span></li>
+          <li><strong id="stat-years">—</strong><span>سنوات الخبرة</span></li>
+        </ul>
+      </div>
+
+      <div class="about-visual">
+        <img id="aboutImage" src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&w=1000&q=80" alt="مشاريع ومجمعات ايادي" />
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS GRID -->
+  <section id="projects" class="projects container">
+    <h3>مشاريعنا السكنية</h3>
+    <p class="section-desc">مجموعة من المشاريع السكنية المتنوعة التي تلبي احتياجات العائلة العراقية</p>
+
+    <div class="project-grid" id="projectsGrid">
+      <!-- injected by script.js -->
+    </div>
+  </section>
+
+  <!-- COMPANIES -->
+  <section id="companies" class="companies container">
+    <h3>شركاتنا ومعاملنا</h3>
+    <div class="companies-grid" id="companiesGrid">
+      <!-- injected by script.js -->
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="contact container">
+    <h3>تواصل معنا</h3>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <p><strong>الهواتف الرسمية</strong></p>
+        <p>0780 000 0000</p>
+        <p>0770 000 0000</p>
+
+        <p><strong>العنوان</strong></p>
+        <p>بغداد — العراق</p>
+
+        <p><strong>تابعنا</strong></p>
+        <p class="socials">
+          <a href="https://facebook.com/ayadi.group" target="_blank">فيسبوك</a> —
+          <a href="https://instagram.com/ayadi.group" target="_blank">انستغرام</a> —
+          <a href="https://tiktok.com/@ayadi.group" target="_blank">تيك توك</a> —
+          <a href="https://youtube.com/@ayadi.group" target="_blank">يوتيوب</a>
+        </p>
+      </div>
+
+      <div class="contact-map">
+        <iframe
+          src="https://www.google.com/maps?q=Baghdad,+Iraq&output=embed"
+          loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          title="خريطة بغداد" ></iframe>
+      </div>
+    </div>
+
+    <div class="contact-form">
+      <h4>أرسل رسالة</h4>
+      <form id="contactForm">
+        <label>الاسم</label>
+        <input type="text" id="contactName" required />
+        <label>البريد</label>
+        <input type="email" id="contactEmail" required />
+        <label>الرسالة</label>
+        <textarea id="contactMessage" rows="4" required></textarea>
+        <button type="submit" class="btn">إرسال</button>
+        <p id="contactStatus" class="muted"></p>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> شركة الايادي المتحدة — جميع الحقوق محفوظة</p>
+      <nav class="footer-nav">
+        <a href="#projects">مشاريعنا</a>
+        <a href="#companies">شركاتنا</a>
+        <a href="#contact">تواصل معنا</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
