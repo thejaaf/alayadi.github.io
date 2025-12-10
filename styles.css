@@ -1,9 +1,9 @@
 :root{
-  --black:#0D0D0D;
-  --gold:#C8A04F;
+  --black:#081f44;
+  --gold:#dc6601;
   --white:#FFFFFF;
-  --gray:#2A2A2A;
-  --muted: #9b9b9b;
+  --gray:#14366d;
+  --muted: #1f3f74;
   --container-max: 1100px;
   --radius: 8px;
   --font: 'Cairo', sans-serif;
