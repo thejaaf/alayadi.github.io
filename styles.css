@@ -1,9 +1,9 @@
 :root{
-  --black:#081f44;
-  --gold:#dc6601;
+  --black:#081F44;
+  --gold:#DC6601;
   --white:#FFFFFF;
-  --gray:#14366d;
-  --muted:#1f3f74;
+  --gray:#14366D;
+  --muted:#1F3F74;
   --container-max: 1100px;
   --radius: 8px;
   --font: 'PNU', sans-serif;
