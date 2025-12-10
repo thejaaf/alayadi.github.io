@@ -16,7 +16,7 @@
       { id:'glass', title:'شركة الزجاج', desc:'ألواح زجاجية عزل وواجهات', img:'https://images.unsplash.com/photo-1505455184866-62a1ae5b9ea3?auto=format&fit=crop&w=800&q=80' },
       { id:'aluminum', title:'شركة الألمنيوم', desc:'تصنيع واجهات وأبواب ألمنيوم', img:'https://images.unsplash.com/photo-1547592180-2d8f1f4a50d2?auto=format&fit=crop&w=800&q=80' }
     ],
-    contact: { phones: ['0780 000 0000','0770 000 0000'], address: 'بغداد - العراق', socials: { facebook:'https://facebook.com/ayadi.group', instagram:'https://instagram.com/ayadi.group' } }
+    contact: { phones: ['0780 000 0000','0770 000 0000'], address: 'بغداد - العراق', socials: { facebook:'https://facebook.com/thejaaf', instagram:'https://instagram.com/ayadi.group' } }
   };
 
   // load saved or defaults
