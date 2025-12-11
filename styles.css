@@ -121,8 +121,6 @@ section h3{color:var(--gold);margin:18px 0 6px;font-size:20px}
     padding: 0; 
 }
 
-/* ----------------------------------------------- */
-
 /* Footer */
 .site-footer{background:var(--black);padding:18px 0;border-top:4px solid rgba(200,160,79,0.06);margin-top:28px}
 .footer-inner{display:flex;justify-content:space-between;align-items:center}
