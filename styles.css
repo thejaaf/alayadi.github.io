@@ -105,8 +105,8 @@ section h3{color:var(--gold);margin:18px 0 6px;font-size:20px}
 .btn{background:var(--gold);color:var(--black);padding:10px 14px;border-radius:8px;border:0;cursor:pointer}
 /* تنسيق أيقونات التواصل الاجتماعي */
 .socials .social-icon {
-    width: 32px; /* يمكنك تغيير الحجم هنا */
-    height: 32px;
+    width: 75px; /* يمكنك تغيير الحجم هنا */
+    height: 75px;
     vertical-align: middle; /* لمحاذاة الأيقونة مع أي نص مجاور */
     margin: 0 4px; /* مسافة بسيطة حول الأيقونة */
 }
