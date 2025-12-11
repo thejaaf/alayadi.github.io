@@ -105,10 +105,10 @@ section h3{color:var(--gold);margin:18px 0 6px;font-size:20px}
 .btn{background:var(--gold);color:var(--black);padding:10px 14px;border-radius:8px;border:0;cursor:pointer}
 /* تنسيق أيقونات التواصل الاجتماعي */
 .socials .social-icon {
-    width: 75px; /* يمكنك تغيير الحجم هنا */
-    height: 75px;
+    width: 40px; /* يمكنك تغيير الحجم هنا */
+    height: 40px;
     vertical-align: middle; /* لمحاذاة الأيقونة مع أي نص مجاور */
-    margin: 0 !important; /* مسافة بسيطة حول الأيقونة */
+    margin: 1 !important; /* مسافة بسيطة حول الأيقونة */
 }
 /* --- الكود المضاف هنا لتحويل العرض إلى عمودي --- */
 
