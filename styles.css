@@ -117,7 +117,7 @@ section h3{color:var(--gold);margin:18px 0 6px;font-size:20px}
     display: flex;
     flex-direction: column; /* جعل العناصر تتكدس عمودياً */
     align-items: flex-start; /* محاذاة الروابط إلى يمين الحاوية */
-    gap: 1px; /* مسافة عمودية بين كل أيقونة والتي تليها */
+    gap: 0px; /* مسافة عمودية بين كل أيقونة والتي تليها */
     padding: 0; 
 }
 /* إزالة الخط تحت الروابط في قسم التواصل */
