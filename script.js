@@ -21,6 +21,33 @@
 
   // load saved or defaults
   const siteData = JSON.parse(localStorage.getItem('ayadi_siteData') || 'null') || defaults;
+  const sliderElement = document.getElementById('projectSlider');
+let currentPos = 0; // متتبع الموضع الحالي
+const step = 340; // مسافة التمرير (تعادل عرض شريحة واحدة تقريباً)
+
+// تعريف دالة التحريك اليدوي
+window.moveSlider = function(direction) {
+    if (!sliderElement) return;
+
+    // حساب الموضع الجديد
+    if (direction === 'next') {
+        currentPos += step;
+    } else if (direction === 'prev') {
+        currentPos -= step;
+    }
+
+    // التأكد من عدم تجاوز البداية أو النهاية
+    const maxScroll = sliderElement.scrollWidth - sliderElement.clientWidth;
+
+    if (currentPos < 0) {
+        currentPos = 0; // التوقف عند البداية
+    } else if (currentPos > maxScroll) {
+        currentPos = maxScroll; // التوقف عند النهاية
+    }
+
+    // تطبيق الحركة
+    sliderElement.scrollTo({ left: currentPos, behavior: 'smooth' });
+}
 
   // apply hero background
   document.documentElement.style.setProperty('--hero-bg', `url('${siteData.heroImage}')`);
