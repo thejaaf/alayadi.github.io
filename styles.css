@@ -15,7 +15,7 @@ body{
   margin:0;
   font-family:var(--font);
   color:var(--white);
-  background:linear-gradient(80deg,var(--gray),#DC6601);
+  background:linear-gradient(130deg,var(--gray),#DC6601);
   -webkit-font-smoothing:antialiased;
   -moz-osx-font-smoothing:grayscale;
   line-height:1.6;
