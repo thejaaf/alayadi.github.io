@@ -15,12 +15,16 @@ body{
   margin:0;
   font-family:var(--font);
   color:var(--white);
-  background:linear-gradient(130deg,var(--gray),#DC6601);
+  background:linear-gradient(180deg,var(--gray),#DC6601);
   -webkit-font-smoothing:antialiased;
   -moz-osx-font-smoothing:grayscale;
   line-height:1.6;
 }
-
+.card {
+    background: rgba(20, 20, 20, 0.85);
+    backdrop-filter: blur(6px);
+    border-radius: 14px;
+}
 /* Container */
 .container{max-width:var(--container-max);margin:0 auto;padding:28px}
 
