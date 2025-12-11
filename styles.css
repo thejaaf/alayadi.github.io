@@ -110,6 +110,19 @@ section h3{color:var(--gold);margin:18px 0 6px;font-size:20px}
     vertical-align: middle; /* لمحاذاة الأيقونة مع أي نص مجاور */
     margin: 0 4px; /* مسافة بسيطة حول الأيقونة */
 }
+/* --- الكود المضاف هنا لتحويل العرض إلى عمودي --- */
+
+/* تطبيق نظام Flexbox وتوجيه العناصر عمودياً */
+.socials {
+    display: flex;
+    flex-direction: column; /* جعل العناصر تتكدس عمودياً */
+    align-items: flex-start; /* محاذاة الروابط إلى يمين الحاوية */
+    gap: 10px; /* مسافة عمودية بين كل أيقونة والتي تليها */
+    padding: 0; 
+}
+
+/* ----------------------------------------------- */
+
 /* Footer */
 .site-footer{background:var(--black);padding:18px 0;border-top:4px solid rgba(200,160,79,0.06);margin-top:28px}
 .footer-inner{display:flex;justify-content:space-between;align-items:center}
