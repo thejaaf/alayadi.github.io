@@ -12,10 +12,10 @@
 *{box-sizing:border-box}
 html,body{height:101%}
 body{
-  margin:80;
+  margin:0;
   font-family:var(--font);
   color:var(--white);
-  background:linear-gradient(180deg,var(--gray),#DC6601);
+  background:linear-gradient(0deg,var(--gray),#DC6601);
   -webkit-font-smoothing:antialiased;
   -moz-osx-font-smoothing:grayscale;
   line-height:1.6;
