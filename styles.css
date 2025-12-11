@@ -97,7 +97,6 @@ section h3{color:var(--gold);margin:18px 0 6px;font-size:20px}
 .company-card p{margin:0;color:var(--muted);font-size:13px}
 
 /* Contact */
-.contact-grid{display:grid;grid-template-columns:360px 1fr;gap:18px}
 .contact-info p{margin:6px 0}
 .contact-map iframe{width:100%;height:220px;border:0;border-radius:8px}
 .contact-form{margin-top:12px;background:#0f0f0f;padding:14px;border-radius:10px;border:1px solid rgba(255,255,255,0.03)}
