@@ -103,7 +103,13 @@ section h3{color:var(--gold);margin:18px 0 6px;font-size:20px}
 .contact-form label{display:block;color:var(--muted);margin-top:8px}
 .contact-form input,.contact-form textarea{width:100%;padding:10px;border-radius:6px;border:1px solid rgba(255,255,255,0.04);background:#101010;color:var(--white)}
 .btn{background:var(--gold);color:var(--black);padding:10px 14px;border-radius:8px;border:0;cursor:pointer}
-
+/* تنسيق أيقونات التواصل الاجتماعي */
+.socials .social-icon {
+    width: 32px; /* يمكنك تغيير الحجم هنا */
+    height: 32px;
+    vertical-align: middle; /* لمحاذاة الأيقونة مع أي نص مجاور */
+    margin: 0 4px; /* مسافة بسيطة حول الأيقونة */
+}
 /* Footer */
 .site-footer{background:var(--black);padding:18px 0;border-top:4px solid rgba(200,160,79,0.06);margin-top:28px}
 .footer-inner{display:flex;justify-content:space-between;align-items:center}
