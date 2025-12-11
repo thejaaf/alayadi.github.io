@@ -11,11 +11,10 @@
       { id: 'adal', title: 'مجمع ايادي العدل', desc: 'مشروع سكني راقٍ للعوائل وذوي الدخل المتوسط', img: 'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=900&q=80' }
     ],
     companies: [
-      { id:'cement', title: 'شركة سما بغداد', desc:'شركة متخصصة في تقسية الزجاج', img:'https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=800&q=80' },
-      { id:'bricks', title:'شركة بهجة الشروق', desc:'للاستثمار والتطوير العقاري ', img:'https://images.unsplash.com/photo-1581092795365-2f83b3d4f2d0?auto=format&fit=crop&w=800&q=80' },
-      { id:'glass', title:'شركة الاندلس', desc:'لانتاج السلع اللدائنية المحدودة', img:'https://images.unsplash.com/photo-1505455184866-62a1ae5b9ea3?auto=format&fit=crop&w=800&q=80' },
-      { id:'aluminum', title:'شركة المركز الدولي', desc:'شركة قانونية رصينة معتمدة', img:'https://images.unsplash.com/photo-1547592180-2d8f1f4a50d2?auto=format&fit=crop&w=800&q=80' }
-      { id:'hbob', title:'شركة سلامة ', desc:'لطحن وتجارة الحبوب المحدودة', img:'https://images.unsplash.com/photo-1547592180-2d8f1f4a50d2?auto=format&fit=crop&w=800&q=80' }
+      { id:'cement', title: 'شركة الإسمنت', desc:'مصنع حديث للإسمنت ليدعم مشاريع البناء', img:'https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=800&q=80' },
+      { id:'bricks', title:'شركة الطابوق', desc:'إنتاج طابوق بجودة صناعية عالية', img:'https://images.unsplash.com/photo-1581092795365-2f83b3d4f2d0?auto=format&fit=crop&w=800&q=80' },
+      { id:'glass', title:'شركة الزجاج', desc:'ألواح زجاجية عزل وواجهات', img:'https://images.unsplash.com/photo-1505455184866-62a1ae5b9ea3?auto=format&fit=crop&w=800&q=80' },
+      { id:'aluminum', title:'شركة الألمنيوم', desc:'تصنيع واجهات وأبواب ألمنيوم', img:'https://images.unsplash.com/photo-1547592180-2d8f1f4a50d2?auto=format&fit=crop&w=800&q=80' }
     ],
     contact: { phones: ['0780 000 0000','0770 000 0000'], address: 'بغداد - العراق', socials: { facebook:'https://facebook.com/thejaaf', instagram:'https://instagram.com/ayadi.group' } }
   };
