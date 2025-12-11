@@ -10,7 +10,7 @@
 }
 
 *{box-sizing:border-box}
-html,body{height:100%}
+html,body{height:101%}
 body{
   margin:80;
   font-family:var(--font);
