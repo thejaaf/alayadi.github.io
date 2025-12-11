@@ -50,7 +50,26 @@
     `;
     slider.appendChild(slide);
   });
+  // تحقق للتأكد من وجود السلايدر قبل محاولة تحريكه
+if (slider && siteData.projects.length > 1) { 
+    let pos = 0;
+    const scrollStep = 340; // مسافة التمرير لكل خطوة (تقريباً عرض الشريحة)
+    const scrollInterval = 3500; // وقت التوقف بين الحركات (3.5 ثانية)
 
+    setInterval(()=> {
+        pos += scrollStep;
+        
+        // التحقق من تجاوز نهاية الشريط
+        // (scrollWidth: العرض الكلي للمحتوى، clientWidth: العرض المرئي للحاوية)
+        if(pos >= slider.scrollWidth - slider.clientWidth) {
+            pos = 0; // العودة إلى البداية
+        }
+        
+        // تطبيق التمرير السلس
+        slider.scrollTo({ left: pos, behavior: 'smooth' });
+    }, scrollInterval);
+}
+  
   // auto-scroll slider
   let pos = 0;
   setInterval(()=> {
