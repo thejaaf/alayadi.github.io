@@ -108,7 +108,7 @@ section h3{color:var(--gold);margin:18px 0 6px;font-size:20px}
     width: 75px; /* يمكنك تغيير الحجم هنا */
     height: 75px;
     vertical-align: middle; /* لمحاذاة الأيقونة مع أي نص مجاور */
-    margin: 0 4px; /* مسافة بسيطة حول الأيقونة */
+    margin: 0 !important; /* مسافة بسيطة حول الأيقونة */
 }
 /* --- الكود المضاف هنا لتحويل العرض إلى عمودي --- */
 
@@ -117,12 +117,15 @@ section h3{color:var(--gold);margin:18px 0 6px;font-size:20px}
     display: flex;
     flex-direction: column; /* جعل العناصر تتكدس عمودياً */
     align-items: flex-start; /* محاذاة الروابط إلى يمين الحاوية */
-    gap: 0px; /* مسافة عمودية بين كل أيقونة والتي تليها */
-    padding: 0; 
+    gap: 0px !important; /* مسافة عمودية بين كل أيقونة والتي تليها */
+    padding: 0 !important;
 }
 /* إزالة الخط تحت الروابط في قسم التواصل */
 .socials a {
     text-decoration: none; /* إزالة الخط تحت النص/الأيقونة */
+  display: flex; /* لضمان أن الروابط تعمل ككتلة */
+    margin: 0 !important; /* إلغاء أي هامش خارجي من الروابط */
+    padding: 0 !important; /* إلغاء أي مسافة داخلية من الروابط */
 }
 /* Footer */
 .site-footer{background:var(--black);padding:18px 0;border-top:4px solid rgba(200,160,79,0.06);margin-top:28px}
