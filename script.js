@@ -90,16 +90,7 @@
     companiesGrid.appendChild(card);
   });
 
-  // contact form (mock)
-  const contactForm = document.getElementById('contactForm');
-  if(contactForm){
-    contactForm.addEventListener('submit', function(e){
-      e.preventDefault();
-      document.getElementById('contactStatus').textContent = 'تم إرسال الرسالة (نموذج تجريبي) — سنرد قريباً';
-      contactForm.reset();
-      setTimeout(()=> document.getElementById('contactStatus').textContent = '', 4000);
-    });
-  }
+
 
   // mobile nav toggle
   const navToggle = document.querySelector('.nav-toggle');
