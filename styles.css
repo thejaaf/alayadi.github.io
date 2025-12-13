@@ -65,7 +65,7 @@ body{
     grid-auto-flow:column; 
     gap:18px;
     
-    /* العرض كما هو (280 بكسل) */
+    /* تحديد عرض الشريحة: 280 بكسل */
     grid-auto-columns: 280px; 
     
     overflow-x: auto; 
@@ -85,25 +85,21 @@ body{
     scroll-snap-align: start;
     width: 100%; 
     
-    /* ✅ التعديل الأهم: زيادة ارتفاع البطاقة لضمان ظهور الزر */
-    max-height: 450px; /* ارتفاع كافٍ لظهور الصورة الكبيرة والنص والزر بالكامل */
-    height: auto; /* التأكد من أن الارتفاع يتكيف مع المحتوى حتى هذا الحد */
+    /* ارتفاع الشريحة: 450 بكسل لضمان ظهور الزر */
+    max-height: 450px; 
+    height: auto; 
     
     background:linear-gradient(180deg,#111,#1a1a1a);
     border-radius:12px;
     padding:14px;
     box-shadow:0 10px 30px rgba(0,0,0,0.5);
     border:1px solid rgba(200,160,79,0.08);
-    
-    /* إزالة overflow: hidden لضمان عدم اقتصاص أي محتوى */
 }
 
 /* التحكم في ارتفاع الصورة داخل الشريحة (إذا كانت موجودة) */
 .slide img {
     width: 100%;
-    /* ✅ التعديل: زيادة ارتفاع الصورة إلى 220 بكسل */
-    height: 220px; 
-    
+    height: 220px; /* ارتفاع الصورة تم تحديده لتقليل ارتفاع البطاقة الكلي */
     object-fit: cover;
     border-radius: 8px;
     margin-bottom: 8px;
@@ -118,7 +114,6 @@ body{
     .slide img {
         height: 160px; 
     }
-    /* ضمان ظهور الزر أيضاً على الشاشات الصغيرة */
     .slide {
         max-height: 400px; 
     }
@@ -195,4 +190,145 @@ section h3{color:var(--gold);margin:18px 0 6px;font-size:20px}
 @media (max-width:640px){
   .project-grid,.companies-grid{grid-template-columns:1fr}
   .hero-title{font-size:28px}
+}
+/* ---------------------------------- */
+/* 2. Modal Styling (نافذة التفاصيل) */
+/* ---------------------------------- */
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    visibility: hidden; 
+    opacity: 0;
+    transition: visibility 0s 0.4s, opacity 0.4s ease;
+    z-index: 100; 
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* حالة إظهار النافذة */
+.modal.is-visible {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.4s ease;
+}
+
+/* تغطية الخلفية (Overlay) */
+.modal-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.9); 
+    backdrop-filter: blur(4px); 
+}
+
+/* محتوى النافذة (البطاقة الداخلية) */
+.modal-content {
+    position: relative;
+    max-width: 900px;
+    width: 100%;
+    z-index: 101; 
+    padding: 25px;
+    transform: scale(0.9); 
+    transition: transform 0.4s ease;
+}
+
+/* الحركة عند الظهور */
+.modal.is-visible .modal-content {
+    transform: scale(1);
+}
+
+/* تصميم الزر (X) للإغلاق */
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: var(--gold);
+    color: var(--black);
+    border: none;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    font-size: 20px;
+    cursor: pointer;
+    line-height: 1;
+    z-index: 102;
+    transition: background 0.3s;
+}
+.close-btn:hover {
+    background: #e0c27b;
+}
+
+/* شبكة تفاصيل المحتوى (صورة + نص) */
+.modal-details-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.modal-image img {
+    width: 100%;
+    height: 350px; 
+    object-fit: cover;
+    border-radius: var(--radius);
+}
+
+.modal-title {
+    color: var(--gold);
+    margin: 0 0 5px 0;
+    font-size: 24px;
+}
+.modal-category {
+    color: var(--muted);
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+.modal-info h3 {
+    color: var(--white);
+    font-size: 18px;
+    margin: 15px 0 8px;
+}
+.modal-info ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 0;
+}
+.modal-info li {
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 5px;
+    position: relative;
+    padding-right: 15px; 
+}
+.modal-info li::before {
+    content: '★'; 
+    color: var(--gold);
+    position: absolute;
+    right: 0;
+    font-size: 10px;
+    line-height: 1.6;
+}
+.modal-divider {
+    border: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    margin: 15px 0;
+}
+.map-link {
+    margin-top: 15px;
+    display: inline-block;
+}
+
+/* استجابة الشاشات الصغيرة */
+@media (max-width: 768px) {
+    .modal-details-grid {
+        grid-template-columns: 1fr; 
+    }
+    .modal-image img {
+        height: 250px;
+    }
 }
