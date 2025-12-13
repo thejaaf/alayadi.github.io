@@ -6,16 +6,16 @@
   --muted:#1F3F74;
   --container-max: 1100px;
   --radius: 8px;
-  --font: 'PNU', sans-serif;
+  --font: 'Cairo', sans-serif; /* 🟢 تم تصحيح الخط هنا */
 }
 
 *{box-sizing:border-box}
-html,body{height:100%}
+/* 🟢 التصحيح الأهم: استعادة الارتفاع الأصلي لمنع تخربط الخلفية */
+html,body{height:101%} 
 body{
   margin:0;
   font-family:var(--font);
   color:var(--white);
-  /* 🟢 تصحيح: إعادة تدريج الألوان للخلفية وصورة البانر */
   background:linear-gradient(0deg,var(--gray),#DC6601);
   -webkit-font-smoothing:antialiased;
   -moz-osx-font-smoothing:grayscale;
@@ -60,7 +60,7 @@ body{
 .hero-sub{margin:12px 0 20px;color:rgba(255,255,255,0.9)}
 .cta{display:inline-block;background:var(--gold);color:var(--black);padding:12px 20px;border-radius:6px;text-decoration:none;font-weight:700}
 
-/* Slider - 🟢 تصحيح: إعادة التراصف الأفقي وحجم الشريحة */
+/* Slider - تصحيح: إعادة التراصف الأفقي وحجم الشريحة */
 .slider{
     display:grid;
     grid-auto-flow:column; 
@@ -193,7 +193,7 @@ section h3{color:var(--gold);margin:18px 0 6px;font-size:20px}
 }
 
 /* ---------------------------------- */
-/* 2. Modal Styling (نافذة التفاصيل) - 🟢 مُعاد ومُصحَّح */
+/* 2. Modal Styling (نافذة التفاصيل) - النهائية */
 /* ---------------------------------- */
 
 .modal {
@@ -232,14 +232,13 @@ section h3{color:var(--gold);margin:18px 0 6px;font-size:20px}
 /* محتوى النافذة (البطاقة الداخلية) */
 .modal-content {
     position: relative;
-    max-width: 720px; /* العرض الأصغر */
+    max-width: 720px; 
     width: 100%;
     z-index: 1001; 
     padding: 25px;
     
-    /* منع الاختفاء: الحد الأقصى للارتفاع والتمرير الداخلي */
-    max-height: 90vh; 
-    overflow-y: auto; /* 🟢 تم تصحيح هذا إلى auto للتأكد من رؤية كل المحتوى، ورفعنا الـ z-index */
+    max-height: 90vh; 
+    overflow-y: auto; 
     
     transform: scale(0.9); 
     transition: transform 0.4s ease;
@@ -274,31 +273,30 @@ section h3{color:var(--gold);margin:18px 0 6px;font-size:20px}
 /* شبكة تفاصيل المحتوى (صورة + نص) */
 .modal-details-grid {
     display: grid;
-    /* الصورة على اليسار، النص على اليمين */
     grid-template-columns: 1fr 1fr; 
     gap: 30px; 
-    align-items: center; /* توسيط رأسي */
+    align-items: center; 
 }
 
 /* حاوية الصورة */
 .modal-image {
-    grid-column: 1 / 2; /* الصورة في العمود الأيسر (في وضع RTL) */
-    text-align: center; 
+    grid-column: 1 / 2; 
+    text-align: center; 
 }
 
 .modal-image img {
     max-width: 100%;
-    object-fit: cover; /* لضمان التناسب وعدم التشوه */
+    object-fit: cover; 
     height: 280px; 
     border-radius: var(--radius);
     display: block; 
-    margin: 0 auto; /* توسيط الصورة */
+    margin: 0 auto; 
 }
 
 /* تفاصيل النص */
 .modal-info {
-    grid-column: 2 / 3; /* النص في العمود الأيمن (في وضع RTL) */
-    text-align: right; /* محاذاة النص لليمين */
+    grid-column: 2 / 3; 
+    text-align: right; 
 }
 
 .modal-title {
