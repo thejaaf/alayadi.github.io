@@ -1,30 +1,30 @@
 :root{
-  --black:#081F44;
-  --gold:#DC6601;
-  --white:#FFFFFF;
-  --gray:#14366D;
-  --muted:#1F3F74;
-  --container-max: 1100px;
-  --radius: 8px;
-  --font: 'PNU', sans-serif;
+  --black:#081F44;
+  --gold:#DC6601;
+  --white:#FFFFFF;
+  --gray:#14366D;
+  --muted:#1F3F74;
+  --container-max: 1100px;
+  --radius: 8px;
+  --font: 'PNU', sans-serif;
 }
 
 *{box-sizing:border-box}
 html,body{height:101%}
 body{
-  margin:0;
-  font-family:var(--font);
-  color:var(--white);
-  background:linear-gradient(0deg,var(--gray),#DC6601);
-  -webkit-font-smoothing:antialiased;
-  -moz-osx-font-smoothing:grayscale;
-  line-height:1.6;
+  margin:0;
+  font-family:var(--font);
+  color:var(--white);
+  background:linear-gradient(0deg,var(--gray),#DC6601);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.6;
 }
-.card 
+.card 
 {
-    background: rgba(20, 20, 20, 0.85);
-    backdrop-filter: blur(6px);
-    border-radius: 14px;
+    background: rgba(20, 20, 20, 0.85);
+    backdrop-filter: blur(6px);
+    border-radius: 14px;
 }
 /* Container */
 .container{max-width:var(--container-max);margin:0 auto;padding:28px}
@@ -34,10 +34,10 @@ body{
 .header-inner{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
 .brand{display:flex;align-items:center;gap:14px}
 .logo-mark{
-  background:linear-gradient(135deg,var(--gold),#e0c27b);
-  color:var(--black);
-  font-weight:700;
-  padding:8px 14px;border-radius:6px;font-size:20px;
+  background:linear-gradient(135deg,var(--gold),#e0c27b);
+  color:var(--black);
+  font-weight:700;
+  padding:8px 14px;border-radius:6px;font-size:20px;
 }
 .brand-text h1{margin:0;font-size:18px}
 .brand-text p{margin:0;color:var(--muted);font-size:12px}
@@ -48,10 +48,10 @@ body{
 
 /* HERO */
 .hero{
-  min-height:52vh;
-  background-image:var(--hero-bg);
-  background-size:cover;background-position:center;
-  position:relative;display:flex;align-items:center;color:var(--white);
+  min-height:52vh;
+  background-image:var(--hero-bg);
+  background-size:cover;background-position:center;
+  position:relative;display:flex;align-items:center;color:var(--white);
 }
 .hero .overlay{position:absolute;inset:0;background:linear-gradient(180deg, rgba(10,10,10,0.65), rgba(10,10,10,0.6))}
 .hero-content{position:relative;padding:56px 20px}
@@ -61,62 +61,62 @@ body{
 
 /* Slider */
 .slider{
-    display:grid;
-    grid-auto-flow:column; 
-    gap:18px;
-    
-    /* تحديد عرض الشريحة: 280 بكسل */
-    grid-auto-columns: 280px; 
-    
-    overflow-x: auto; 
-    scroll-snap-type: x mandatory; 
-    -webkit-overflow-scrolling: touch; 
-    
-    padding:18px;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
+    display:grid;
+    grid-auto-flow:column; 
+    gap:18px;
+    
+    /* تحديد عرض الشريحة: 280 بكسل */
+    grid-auto-columns: 280px; 
+    
+    overflow-x: auto; 
+    scroll-snap-type: x mandatory; 
+    -webkit-overflow-scrolling: touch; 
+    
+    padding:18px;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
 /* إخفاء شريط التمرير في المتصفحات التي تدعم -webkit */
 .slider::-webkit-scrollbar {
-    display: none;
+    display: none;
 }
 /* إضافة تثبيت الشريحة */
 .slide {
-    scroll-snap-align: start;
-    width: 100%; 
-    
-    /* ارتفاع الشريحة: 450 بكسل لضمان ظهور الزر */
-    max-height: 450px; 
-    height: auto; 
-    
-    background:linear-gradient(180deg,#111,#1a1a1a);
-    border-radius:12px;
-    padding:14px;
-    box-shadow:0 10px 30px rgba(0,0,0,0.5);
-    border:1px solid rgba(200,160,79,0.08);
+    scroll-snap-align: start;
+    width: 100%; 
+    
+    /* ارتفاع الشريحة: 450 بكسل لضمان ظهور الزر */
+    max-height: 450px; 
+    height: auto; 
+    
+    background:linear-gradient(180deg,#111,#1a1a1a);
+    border-radius:12px;
+    padding:14px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.5);
+    border:1px solid rgba(200,160,79,0.08);
 }
 
 /* التحكم في ارتفاع الصورة داخل الشريحة (إذا كانت موجودة) */
 .slide img {
-    width: 100%;
-    height: 220px; /* ارتفاع الصورة تم تحديده لتقليل ارتفاع البطاقة الكلي */
-    object-fit: cover;
-    border-radius: 8px;
-    margin-bottom: 8px;
+    width: 100%;
+    height: 220px; /* ارتفاع الصورة تم تحديده لتقليل ارتفاع البطاقة الكلي */
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 8px;
 }
 
 /* تعديل عرض الشاشات الصغيرة */
 @media (max-width: 640px) {
-    .slider {
-        grid-auto-columns: 80vw;
-        gap: 12px;
-    }
-    .slide img {
-        height: 160px; 
-    }
-    .slide {
-        max-height: 400px; 
-    }
+    .slider {
+        grid-auto-columns: 80vw;
+        gap: 12px;
+    }
+    .slide img {
+        height: 160px; 
+    }
+    .slide {
+        max-height: 400px; 
+    }
 }
 /* Sections */
 section h3{color:var(--gold);margin:18px 0 6px;font-size:20px}
@@ -147,147 +147,4 @@ section h3{color:var(--gold);margin:18px 0 6px;font-size:20px}
 .contact-info p{margin:6px 0}
 .contact-map iframe{width:100%;height:220px;border:0;border-radius:8px}
 .contact-form{margin-top:12px;background:#0f0f0f;padding:14px;border-radius:10px;border:1px solid rgba(255,255,255,0.03)}
-.contact-form label{display:block;color:var(--muted);margin-top:8px}
-.contact-form input,.contact-form textarea{width:100%;padding:10px;border-radius:6px;border:1px solid rgba(255,255,255,0.04);background:#101010;color:var(--white)}
-.btn{background:var(--gold);color:var(--black);padding:10px 14px;border-radius:8px;border:0;cursor:pointer}
-/* تنسيق أيقونات التواصل الاجتماعي */
-.socials .social-icon {
-    width: 38px; /* يمكنك تغيير الحجم هنا */
-    height: 38px;
-    vertical-align: middle; /* لمحاذاة الأيقونة مع أي نص مجاور */
-    margin: 1 !important; /* مسافة بسيطة حول الأيقونة */
-}
-/* --- الكود المضاف هنا لتحويل العرض إلى عمودي --- */
-
-/* تطبيق نظام Flexbox وتوجيه العناصر عمودياً */
-.socials {
-    display: flex;
-    flex-direction: column; /* جعل العناصر تتكدس عمودياً */
-    align-items: flex-start; /* محاذاة الروابط إلى يمين الحاوية */
-    gap: 0px !important; /* مسافة عمودية بين كل أيقونة والتي تليها */
-    padding: 0 !important;
-}
-/* إزالة الخط تحت الروابط في قسم التواصل */
-.socials a {
-    text-decoration: none; /* إزالة الخط تحت النص/الأيقونة */
-  display: flex; /* لضمان أن الروابط تعمل ككتلة */
-    margin: 0 !important; /* إلغاء أي هامش خارجي من الروابط */
-    padding: 0 !important; /* إلغاء أي مسافة داخلية من الروابط */
-}
-/* Footer */
-.site-footer{background:var(--black);padding:18px 0;border-top:4px solid rgba(200,160,79,0.06);margin-top:28px}
-.footer-inner{display:flex;justify-content:space-between;align-items:center}
-.footer-nav a{color:var(--muted);margin-left:14px;text-decoration:none;font-size:14px}
-
-/* Responsive */
-@media (max-width:980px){
-  .project-grid,.companies-grid{grid-template-columns:repeat(3,1fr)}
-  .about-grid{grid-template-columns:1fr}
-  .contact-grid{grid-template-columns:1fr}
-  .nav-toggle{display:block}
-  .main-nav{display:none}
-}
-@media (max-width:640px){
-  .project-grid,.companies-grid{grid-template-columns:1fr}
-  .hero-title{font-size:28px}
-}
-/* ---------------------------------- */
-/* 2. Modal Styling (نافذة التفاصيل) */
-/* ---------------------------------- */
-/* ... (احتفظ بالكود العلوي لـ .modal و .modal-overlay و .modal-content كما هو) ... */
-
-/* شبكة تفاصيل المحتوى (صورة + نص) */
-.modal-details-grid {
-    display: grid;
-    /* ✅ التعديل الأول: تبديل ترتيب الأعمدة (الصورة أولاً، ثم النص ثانياً) */
-    grid-template-columns: 1fr 1fr; 
-    gap: 30px; 
-    /* ✅ التعديل الثاني: محاذاة العناصر رأسياً في المنتصف لتحقيق التوسيط */
-    align-items: center; 
-}
-
-/* حاوية الصورة */
-.modal-image {
-    /* ✅ التعديل الثالث: وضع الصورة في العمود الأيسر وتوسيطها */
-    grid-column: 1 / 2; /* تأكيد أن الصورة في العمود الأول (الأيمن في RTL) */
-    text-align: center; /* لتوسيط الصورة داخل حاوية العمود الأيسر (اختياري) */
-}
-
-.modal-image img {
-    max-width: 100%; /* لضمان عدم خروجها من أطراف النافذة */
-    /* ✅ التعديل الرابع: الحفاظ على نسبة العرض إلى الارتفاع عند الاقتطاع لصور مستطيلة */
-    object-fit: cover; 
-    
-    height: 280px; /* الارتفاع المحدد سابقاً */
-    border-radius: var(--radius);
-    
-    /* لضمان توسيط الكتلة الصورة نفسها (إذا كانت أضيق من العمود) */
-    display: block; 
-    margin: 0 auto; 
-}
-
-/* تفاصيل النص */
-.modal-info {
-    /* ✅ التعديل الخامس: وضع التفاصيل في العمود الأيمن */
-    grid-column: 2 / 3; /* تأكيد أن التفاصيل في العمود الثاني (الأيسر في RTL) */
-    text-align: right; /* محاذاة النص لليمين */
-}
-
-.modal-title {
-    color: var(--gold);
-    margin: 0 0 5px 0;
-    font-size: 24px; /* زيادة حجم الخط للعنوان */
-    font-family: var(--font); /* التأكيد على استخدام خط PNU */
-}
-.modal-category {
-    color: var(--muted);
-    font-size: 16px; /* زيادة حجم الخط */
-    margin-bottom: 15px;
-    font-family: var(--font);
-}
-.modal-info h3 {
-    color: var(--white);
-    font-size: 19px; /* زيادة حجم الخط */
-    margin: 15px 0 8px;
-    font-family: var(--font);
-}
-.modal-info ul {
-    list-style: none;
-    padding: 0;
-    margin-top: 0;
-}
-.modal-info li {
-    color: rgba(255, 255, 255, 0.9);
-    margin-bottom: 7px;
-    position: relative;
-    padding-right: 20px;
-    font-size: 15px; /* زيادة حجم الخط */
-    font-family: var(--font);
-}
-.modal-info li::before {
-    content: '★';
-    color: var(--gold);
-    position: absolute;
-    right: 0;
-    font-size: 12px;
-    line-height: 1.6;
-}
-/* ... (احتفظ ببقية التنسيقات كما هي) ... */
-
-/* استجابة الشاشات الصغيرة */
-@media (max-width: 768px) {
-    .modal-details-grid {
-        /* ✅ التعديل السادس: إعادة الترتيب على الموبايل (الصورة أولاً ثم النص) */
-        grid-template-columns: 1fr; 
-    }
-    .modal-image {
-        grid-column: 1 / -1; /* الصورة تشغل كامل العرض */
-    }
-    .modal-info {
-        grid-column: 1 / -1; /* النص يشغل كامل العرض */
-        text-align: right; 
-    }
-    .modal-image img {
-        height: 200px;
-    }
-}
+.contact-form label{display:block;color:var(--muted);margin-top:8
