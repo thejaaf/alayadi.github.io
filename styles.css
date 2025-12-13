@@ -205,7 +205,7 @@ section h3{color:var(--gold);margin:18px 0 6px;font-size:20px}
     visibility: hidden; 
     opacity: 0;
     transition: visibility 0s 0.4s, opacity 0.4s ease;
-    z-index: 100; 
+    z-index: 1000; /* زيادة الـ z-index لضمان الظهور فوق أي شريط علوي */
     
     display: flex;
     justify-content: center;
@@ -231,10 +231,18 @@ section h3{color:var(--gold);margin:18px 0 6px;font-size:20px}
 /* محتوى النافذة (البطاقة الداخلية) */
 .modal-content {
     position: relative;
-    max-width: 900px;
+    
+    /* 1. ✅ التعديل الأهم لتصغير العرض */
+    max-width: 720px; 
+    
     width: 100%;
-    z-index: 101; 
+    z-index: 1001; 
     padding: 25px;
+    
+    /* 2. ✅ التعديل الأهم لمنع اختفاء المحتوى (Clipping) */
+    max-height: 90vh; /* تحديد أقصى ارتفاع بـ 90% من ارتفاع الشاشة */
+    overflow-y: auto; /* السماح بالتمرير داخل النافذة إذا كان المحتوى أطول */
+
     transform: scale(0.9); 
     transition: transform 0.4s ease;
 }
@@ -246,6 +254,7 @@ section h3{color:var(--gold);margin:18px 0 6px;font-size:20px}
 
 /* تصميم الزر (X) للإغلاق */
 .close-btn {
+    /* ... (احتفظ بالتنسيق كما هو) ... */
     position: absolute;
     top: 15px;
     right: 15px;
@@ -258,7 +267,7 @@ section h3{color:var(--gold);margin:18px 0 6px;font-size:20px}
     font-size: 20px;
     cursor: pointer;
     line-height: 1;
-    z-index: 102;
+    z-index: 1002; /* زيادة الـ z-index ليظهر فوق المحتوى */
     transition: background 0.3s;
 }
 .close-btn:hover {
@@ -268,13 +277,15 @@ section h3{color:var(--gold);margin:18px 0 6px;font-size:20px}
 /* شبكة تفاصيل المحتوى (صورة + نص) */
 .modal-details-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
+    grid-template-columns: 1fr 1fr; 
+    gap: 20px; /* تقليل المسافة لتوفير مساحة */
 }
 
 .modal-image img {
     width: 100%;
-    height: 350px; 
+    /* 3. ✅ تقليل ارتفاع الصورة لتناسب العرض الأصغر */
+    height: 280px; 
+    
     object-fit: cover;
     border-radius: var(--radius);
 }
@@ -282,16 +293,16 @@ section h3{color:var(--gold);margin:18px 0 6px;font-size:20px}
 .modal-title {
     color: var(--gold);
     margin: 0 0 5px 0;
-    font-size: 24px;
+    font-size: 22px; /* تصغير حجم الخط قليلاً */
 }
 .modal-category {
     color: var(--muted);
-    font-size: 14px;
+    font-size: 13px; /* تصغير حجم الخط قليلاً */
     margin-bottom: 10px;
 }
 .modal-info h3 {
     color: var(--white);
-    font-size: 18px;
+    font-size: 17px;
     margin: 15px 0 8px;
 }
 .modal-info ul {
@@ -303,10 +314,11 @@ section h3{color:var(--gold);margin:18px 0 6px;font-size:20px}
     color: rgba(255, 255, 255, 0.8);
     margin-bottom: 5px;
     position: relative;
-    padding-right: 15px; 
+    padding-right: 15px;
+    font-size: 14px; /* ضبط حجم الخط */
 }
 .modal-info li::before {
-    content: '★'; 
+    content: '★';
     color: var(--gold);
     position: absolute;
     right: 0;
@@ -323,12 +335,16 @@ section h3{color:var(--gold);margin:18px 0 6px;font-size:20px}
     display: inline-block;
 }
 
-/* استجابة الشاشات الصغيرة */
+/* استجابة الشاشات الصغيرة (تم تحديث الأحجام لتناسب التغييرات) */
 @media (max-width: 768px) {
     .modal-details-grid {
-        grid-template-columns: 1fr; 
+        grid-template-columns: 1fr;
+    }
+    .modal-content {
+        max-width: 95%; /* زيادة العرض على الموبايل */
+        padding: 15px;
     }
     .modal-image img {
-        height: 250px;
+        height: 200px;
     }
 }
