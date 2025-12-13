@@ -60,45 +60,37 @@ body{
 .cta{display:inline-block;background:var(--gold);color:var(--black);padding:12px 20px;border-radius:6px;text-decoration:none;font-weight:700}
 
 /* Slider */
+/* Slider - التعديل لتحديد حجم العمود بدقة */
 .slider{
-    display:grid;
-    grid-auto-flow:column;
-    gap:18px;
-    /* استبدال overflow:hidden بالتمرير اليدوي */
-    overflow-x: auto; 
-    /* دعم اللمس والتثبيت التلقائي للشرائح */
-    scroll-snap-type: x mandatory; 
-    -webkit-overflow-scrolling: touch; 
+    display:grid;
+    grid-auto-flow:column;
+    gap:18px;
     
-    padding:18px;
-    /* إخفاء شريط التمرير (لجمالية) */
-    -ms-overflow-style: none; /* IE and Edge */
-    scrollbar-width: none; /* Firefox */
+    /* 🚀 الإضافة الحاسمة: تحديد حجم كل عمود (شريحة) بـ 320 بكسل */
+    grid-auto-columns: 320px; 
+    
+    overflow-x: auto; 
+    scroll-snap-type: x mandatory; 
+    -webkit-overflow-scrolling: touch; 
+    
+    padding:18px;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
 /* إخفاء شريط التمرير في المتصفحات التي تدعم -webkit */
 .slider::-webkit-scrollbar {
     display: none;
 }
 /* إضافة تثبيت الشريحة */
+/* إضافة تثبيت الشريحة */
 .slide {
-    scroll-snap-align: start;
-    min-width:320px;
-    background:linear-gradient(180deg,#111,#1a1a1a);
-    border-radius:12px;
-    padding:14px;
-    box-shadow:0 10px 30px rgba(0,0,0,0.5);
-    border:1px solid rgba(200,160,79,0.08)
-}
-
-/* **تأكد من حذف هذا الكود بالكامل** لأنه يتعلق بالأزرار التي تم إلغاؤها */
-.slider-section {
-    position: relative; 
-}
-.slider-controls {
-    /* ... (جميع تنسيقات الأزرار) ... */
-}
-.slider-btn {
-    /* ... (جميع تنسيقات الأزرار) ... */
+    scroll-snap-align: start;
+    width: 100%; /* اجعل الشريحة تملأ عرض العمود الذي حددناه في .slider */
+    background:linear-gradient(180deg,#111,#1a1a1a);
+    border-radius:12px;
+    padding:14px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.5);
+    border:1px solid rgba(200,160,79,0.08)
 }
 
 /* Sections */
