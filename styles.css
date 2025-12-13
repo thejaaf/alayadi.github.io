@@ -60,17 +60,49 @@ body{
 .cta{display:inline-block;background:var(--gold);color:var(--black);padding:12px 20px;border-radius:6px;text-decoration:none;font-weight:700}
 
 /* Slider */
-.slider-section{margin-top:-36px}
-.slider{display:grid;grid-auto-flow:column;gap:18px;overflow:hidden;padding:18px}
-.slide{
-  min-width:320px;background:linear-gradient(180deg,#111,#1a1a1a);border-radius:12px;padding:14px;
-  box-shadow:0 10px 30px rgba(0,0,0,0.5);border:1px solid rgba(200,160,79,0.08)
+.slider{
+    display:grid;
+    grid-auto-flow:column; /* ⬅️ التأكيد على العرض الأفقي (جنباً إلى جنب) */
+    gap:18px;
+    
+    /* ✅ التعديل: تصغير حجم العمود (الشريحة) إلى 280 بكسل */
+    grid-auto-columns: 280px; 
+    
+    overflow-x: auto; 
+    scroll-snap-type: x mandatory; 
+    -webkit-overflow-scrolling: touch; 
+    
+    padding:18px;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
-.slide img{width:100%;height:180px;object-fit:cover;border-radius:8px}
-.slide h4{margin:10px 0 6px}
-.slide p{margin:0;color:var(--muted);font-size:13px}
-.slide .btn{margin-top:10px;display:inline-block;background:transparent;border:1px solid rgba(200,160,79,0.35);color:var(--gold);padding:8px 12px;border-radius:6px;text-decoration:none}
+/* إخفاء شريط التمرير في المتصفحات التي تدعم -webkit */
+.slider::-webkit-scrollbar {
+    display: none;
+}
+/* إضافة تثبيت الشريحة */
+.slide {
+    scroll-snap-align: start;
+    width: 100%; /* تملأ عرض الـ 280px المحدد */
+    /* ✅ التأكيد على استخدام Card Style: */
+    background:linear-gradient(180deg,#111,#1a1a1a);
+    border-radius:12px;
+    padding:14px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.5);
+    border:1px solid rgba(200,160,79,0.08)
+}
 
+
+/* 💡 التعديل الإضافي: التأكد من عدم تحويل السلايدر إلى عرض عمودي على الشاشات الصغيرة */
+@media (max-width: 640px) {
+    /* التأكيد على إبقاء خصائص الـ Grid لضمان بقاء العرض أفقيًا للتمرير */
+    .slider {
+        display: grid; 
+        grid-auto-flow: column;
+        grid-auto-columns: 80vw; /* استخدام 80% من عرض الشاشة لترك فراغ جانبي */
+        gap: 12px;
+    }
+}
 /* Sections */
 section h3{color:var(--gold);margin:18px 0 6px;font-size:20px}
 .section-desc{color:var(--muted);margin-bottom:12px}
