@@ -121,3 +121,49 @@ window.moveSlider = function(direction) {
   });
 
 })();
+document.addEventListener('DOMContentLoaded', () => {
+    // ... (أي كود JavaScript آخر قد يكون موجودًا بالفعل في هذا الملف) ...
+
+    const modal = document.getElementById('project-modal');
+    const closeBtn = modal.querySelector('.close-btn');
+    // استهدف جميع الأزرار داخل البطاقات التي تريد منها فتح النافذة
+    const projectBtns = document.querySelectorAll('.project-card .btn'); 
+
+    // وظيفة لفتح النافذة
+    function openModal() {
+        modal.classList.add('is-visible');
+        document.body.style.overflow = 'hidden'; // لمنع تمرير الخلفية
+    }
+
+    // وظيفة لإغلاق النافذة
+    function closeModal() {
+        modal.classList.remove('is-visible');
+        document.body.style.overflow = ''; // استعادة تمرير الخلفية
+    }
+
+    // 1. فتح النافذة عند الضغط على زر "عرض المشروع"
+    projectBtns.forEach(button => {
+        button.addEventListener('click', (e) => {
+            e.preventDefault(); 
+            openModal();
+            // ملاحظة: هنا يجب أن تضيف الكود الذي يجلب تفاصيل المشروع (الصورة، الموقع، الخ) ليتم عرضها في النافذة
+        });
+    });
+
+    // 2. إغلاق النافذة عند الضغط على X
+    closeBtn.addEventListener('click', closeModal);
+
+    // 3. إغلاق النافذة عند الضغط خارج المحتوى
+    modal.addEventListener('click', (e) => {
+        if (e.target.classList.contains('modal-overlay')) {
+            closeModal();
+        }
+    });
+
+    // 4. إغلاق النافذة عند الضغط على مفتاح Esc
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.classList.contains('is-visible')) {
+            closeModal();
+        }
+    });
+});
