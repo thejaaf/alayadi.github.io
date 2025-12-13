@@ -6,7 +6,7 @@
   --muted:#1F3F74;
   --container-max: 1100px;
   --radius: 8px;
-  --font: 'Cairo', sans-serif; /* 🟢 تصحيح: استخدام خط Cairo المربوط */
+  --font: 'Cairo', sans-serif; /* 🟢 الخط الصحيح والمربوط */
 }
 
 *{box-sizing:border-box}
