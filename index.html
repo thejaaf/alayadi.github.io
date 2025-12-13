@@ -1,92 +1,51 @@
 <!doctype html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>شركة الايادي المتحدة — الريادة في إنشاء المجمعات السكنية</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>شركة الايادي المتحدة — الريادة في إنشاء المجمعات السكنية</title>
 
-  <!-- Cairo Font -->
-  <link href="https://fonts.googleapis.com/css2?family=cairo:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=cairo:wght@400;700&display=swap" rel="stylesheet">
 
-<style>
-/* استعادة المتغيرات الأساسية والمظهر العام بشكل قسري */
-:root{
-  --black:#081F44;
-  --gold:#DC6601;
-  --white:#FFFFFF;
-  --gray:#14366D;
-  --muted:#1F3F74;
-  --container-max: 1100px;
-  --radius: 8px;
-  --font: 'Cairo', sans-serif;
-}
-html,body{height:101%}
-body{
-  margin:0;
-  font-family:var(--font);
-  color:var(--white);
-  background:linear-gradient(0deg,var(--gray),#DC6601);
-  -webkit-font-smoothing:antialiased;
-  -moz-osx-font-smoothing:grayscale;
-  line-height:1.6;
-}
-.site-header{background:var(--black);position:sticky;top:0;z-index:50;border-bottom:4px solid rgba(200,160,79,0.06)}
-.header-inner{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
-.brand{display:flex;align-items:center;gap:14px}
-.logo-mark{
-  background:linear-gradient(135deg,var(--gold),#e0c27b);
-  color:var(--black);
-  font-weight:700;
-  padding:8px 14px;border-radius:6px;font-size:20px;
-}
-.slider{display:grid;grid-auto-flow:column;gap:18px;grid-auto-columns: 280px;overflow-x: auto;scroll-snap-type: x mandatory;}
-.slide{scroll-snap-align: start;width: 100%;max-height: 450px;background:linear-gradient(180deg,#111,#1a1a1a);border-radius:12px;padding:14px;}
-.slide img{height: 220px; object-fit: cover;}
-</style>
-  
-  <link rel="stylesheet" href="styles.css" />
-  <meta name="theme-color" content="#0D0D0D" />
+  <link rel="stylesheet" href="styles.css" /> 
+  <meta name="theme-color" content="#0D0D0D" />
 </head>
 <body>
- <!-- HEADER -->
-  <header class="site-header">
-    <div class="container header-inner">
-      <div class="brand">
-        <div class="logo-mark">أيادي</div>
-        <div class="brand-text">
-          <h1>شركة الايادي المتحدة</h1>
-          <p class="tagline">الريادة في إنشاء المجمعات السكنية منذ 2014</p>
-        </div>
-      </div>
+   <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <div class="logo-mark">أيادي</div>
+        <div class="brand-text">
+          <h1>شركة الايادي المتحدة</h1>
+          <p class="tagline">الريادة في إنشاء المجمعات السكنية منذ 2014</p>
+        </div>
+      </div>
 
-      <nav class="main-nav" aria-label="القائمة الرئيسية">
-        <a href="#home">الرئيسية</a>
-        <a href="#about">نبذة</a>
-        <a href="#projects">مشاريعنا</a>
-        <a href="#companies">شركاتنا</a>
-        <a href="#contact">تواصل معنا</a>
-        <a class="admin-link" href="admin.html">لوحة التحكم</a>
-      </nav>
+      <nav class="main-nav" aria-label="القائمة الرئيسية">
+        <a href="#home">الرئيسية</a>
+        <a href="#about">نبذة</a>
+        <a href="#projects">مشاريعنا</a>
+        <a href="#companies">شركاتنا</a>
+        <a href="#contact">تواصل معنا</a>
+        <a class="admin-link" href="admin.html">لوحة التحكم</a>
+      </nav>
 
-      <button class="nav-toggle" aria-label="قائمة">☰</button>
-    </div>
-  </header>
+      <button class="nav-toggle" aria-label="قائمة">☰</button>
+    </div>
+  </header>
 
-    <!-- HERO -->
-  <section id="home" class="hero" style="--hero-bg: url('https://ik.imagekit.io/6imts6xf3k/%D8%A8%D9%88%D8%B3%D8%AA%20copy%202.jpg')">
-    <div class="container hero-content">
-      <h2 class="hero-title"></h2>
-      <p class="hero-sub"></p>
-    </div>
-  </section>
+      <section id="home" class="hero" style="--hero-bg: url('https://ik.imagekit.io/6imts6xf3k/%D8%A8%D9%88%D8%B3%D8%AA%20copy%202.jpg')">
+    <div class="container hero-content">
+      <h2 class="hero-title"></h2>
+      <p class="hero-sub"></p>
+    </div>
+  </section>
 
-  <!-- SLIDER -->
-<section class="slider-section container">
+  <section class="slider-section container">
     <div class="slider" id="projectSlider" aria-roledescription="slider">
             </div>
 </section>
-  <!-- ABOUT -->
-<section id="about" class="about container">
+  <section id="about" class="about container">
     <div class="about-grid">
       <div class="about-text">
         <h4>نبذة عن الشركة</h4>
@@ -102,85 +61,79 @@ body{
   <li><strong id="stat-beneficiaries">0</strong><span>عدد الشقق</span></li>
 </ul>
       </div>
-    
+    
       <div class="about-visual">
         <img id="aboutImage" src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&w=1000&q=80" alt="مشاريع ومجمعات ايادي" />
       </div>
     </div>
   </section>
-  
-  <!-- PROJECTS GRID -->
-  <section id="projects" class="projects container">
-    <h4>مشاريعنا السكنية</h4>
-    <p class="section-desc">مجموعة من المشاريع السكنية المتنوعة التي تلبي احتياجات العائلة العراقية</p>
+  
+    <section id="projects" class="projects container">
+    <h4>مشاريعنا السكنية</h4>
+    <p class="section-desc">مجموعة من المشاريع السكنية المتنوعة التي تلبي احتياجات العائلة العراقية</p>
 
-    <div class="project-grid" id="projectsGrid">
-      <!-- injected by script.js -->
-    </div>
-  </section>
+    <div class="project-grid" id="projectsGrid">
+          </div>
+  </section>
 
-  <!-- COMPANIES -->
-  <section id="companies" class="companies container">
-    <h3>شركاتنا ومعاملنا</h3>
-    <div class="companies-grid" id="companiesGrid">
-      <!-- injected by script.js -->
-    </div>
-  </section>
+    <section id="companies" class="companies container">
+    <h3>شركاتنا ومعاملنا</h3>
+    <div class="companies-grid" id="companiesGrid">
+          </div>
+  </section>
 
-  <!-- CONTACT -->
-  <section id="contact" class="contact container">
-    <h3>تواصل معنا</h3>
-    <div class="contact-grid">
-      <div class="contact-info">
-        <p><strong>الهواتف الرسمية</strong></p>
-        <p>07722224243</p>
-        <p>07729942898</p>
+    <section id="contact" class="contact container">
+    <h3>تواصل معنا</h3>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <p><strong>الهواتف الرسمية</strong></p>
+        <p>07722224243</p>
+        <p>07729942898</p>
 
-       <p><strong>تابعنا</strong></p>
+       <p><strong>تابعنا</strong></p>
 <p class="socials">
-    <a href="https://facebook.com/alayadiholding" target="_blank" aria-label="فيسبوك">
-        <img src="https://6939a47a5e5072a583999390.imgix.net/f1.png" alt="أيقونة فيسبوك" class="social-icon">
-    </a>
+    <a href="https://facebook.com/alayadiholding" target="_blank" aria-label="فيسبوك">
+        <img src="https://6939a47a5e5072a583999390.imgix.net/f1.png" alt="أيقونة فيسبوك" class="social-icon">
+    </a>
 
-    <a href="https://instagram.com/ayadi.investment" target="_blank" aria-label="انستغرام">
-        <img src="https://6939a47a5e5072a583999390.imgix.net/i1.png" alt="أيقونة انستغرام" class="social-icon">
-    </a>
+    <a href="https://instagram.com/ayadi.investment" target="_blank" aria-label="انستغرام">
+        <img src="https://6939a47a5e5072a583999390.imgix.net/i1.png" alt="أيقونة انستغرام" class="social-icon">
+    </a>
 
-    </p>
+    </p>
 
-    <div class="contact-map">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d845.7104704361109!2d44.30601113296167!3d33.3098561632665!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x15577d0991c1c3a1%3A0x7a01dd8452affecf!2z2KXYr9in2LHYqSDYtNix2YPYqSDYp9mE2KfZitin2K_ZiiDZhNmE2KfYs9iq2KvZhdin2LEg2KfZhNi52YLYp9ix2Yo!5e0!3m2!1sar!2siq!4v1765439097163!5m2!1sar!2siq"
-          title="خريطة بغداد" ></iframe>
-      </div>
-    </div>
+    <div class="contact-map">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d845.7104704361109!2d44.30601113296167!3d33.3098561632665!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x15577d0991c1c3a1%3A0x7a01dd8452affecf!2z2KXYr9in2LHYqSDYtNix2YPYqSDYp9mE2KfZitin2K_ZiiDZhNmE2KfYs9iq2KvZhdin2LEg2KfZhNi52YLYp9ix2Yo!5e0!3m2!1sar!2siq!4v1765439097163!5m2!1sar!2siq"
+          title="خريطة بغداد" ></iframe>
+      </div>
+    </div>
 
-  <!-- FOOTER -->
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <p>© <span id="year"></span> شركة الايادي المتحدة — جميع الحقوق محفوظة</p>
-      <nav class="footer-nav">
-        <a href="#projects">مشاريعنا</a>
-        <a href="#companies">شركاتنا</a>
-        <a href="#contact">تواصل معنا</a>
-      </nav>
-    </div>
-  </footer>
+    <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> شركة الايادي المتحدة — جميع الحقوق محفوظة</p>
+      <nav class="footer-nav">
+        <a href="#projects">مشاريعنا</a>
+        <a href="#companies">شركاتنا</a>
+        <a href="#contact">تواصل معنا</a>
+      </nav>
+    </div>
+  </footer>
 <div id="project-modal" class="modal">
     <div class="modal-overlay"></div>
-    
+    
     <div class="modal-content card">
-      <button class="close-btn">&times;</button>
-      
+      <button class="close-btn">×</button>
+      
       <div class="modal-details-grid">
         <div class="modal-image">
           <img src="مسار/صورة/المشروع/الكبيرة.jpg" alt="صورة المشروع التفصيلية">
         </div>
-        
+        
         <div class="modal-info">
           <h2 class="modal-title">اسم المشروع بالكامل</h2>
           <p class="modal-category">🏡 مجمعات سكنية فاخرة</p>
-          
+          
           <hr class="modal-divider">
 
           <h3>✨ المميزات الرئيسية</h3>
@@ -189,18 +142,15 @@ body{
             <li>تصميم معماري حديث وعصري.</li>
             <li>خدمات أمنية وحراسة على مدار الساعة.</li>
           </ul>
-          
+          
           <h3>📍 الموقع</h3>
           <p>العنوان: بغداد، حي المنصور، شارع 123.</p>
-          
+          
           <a href="#" class="btn map-link">عرض الموقع على الخريطة</a>
         </div>
       </div>
     </div>
   </div>
     <script src="script.js"></script>
-</body>
-    </html>
-  <script src="script.js"></script>
 </body>
 </html>
