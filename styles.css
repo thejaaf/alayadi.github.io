@@ -60,46 +60,47 @@ body{
 .cta{display:inline-block;background:var(--gold);color:var(--black);padding:12px 20px;border-radius:6px;text-decoration:none;font-weight:700}
 
 /* Slider */
-.slider-section{margin-top:-36px}
-/* تنسيق الأزرار اليدوية (Slider Controls) */
+/* Slider */
+.slider{
+    display:grid;
+    grid-auto-flow:column;
+    gap:18px;
+    /* استبدال overflow:hidden بالتمرير اليدوي */
+    overflow-x: auto; 
+    /* دعم اللمس والتثبيت التلقائي للشرائح */
+    scroll-snap-type: x mandatory; 
+    -webkit-overflow-scrolling: touch; 
+    
+    padding:18px;
+    /* إخفاء شريط التمرير (لجمالية) */
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+}
+/* إخفاء شريط التمرير في المتصفحات التي تدعم -webkit */
+.slider::-webkit-scrollbar {
+    display: none;
+}
+/* إضافة تثبيت الشريحة */
+.slide {
+    scroll-snap-align: start;
+    min-width:320px;
+    background:linear-gradient(180deg,#111,#1a1a1a);
+    border-radius:12px;
+    padding:14px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.5);
+    border:1px solid rgba(200,160,79,0.08)
+}
+
+/* **تأكد من حذف هذا الكود بالكامل** لأنه يتعلق بالأزرار التي تم إلغاؤها */
 .slider-section {
-    position: relative; /* مهم لوضع الأزرار بالنسبة للقسم */
+    position: relative; 
 }
 .slider-controls {
-    position: absolute;
-    top: 50%; /* وسط الارتفاع */
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    padding: 0 10px;
-    z-index: 10;
-    transform: translateY(-50%);
-    pointer-events: none; /* للسماح بالنقر على السلايدر خلف الأزرار */
+    /* ... (جميع تنسيقات الأزرار) ... */
 }
 .slider-btn {
-    pointer-events: auto; /* إعادة تفعيل النقر على الأزرار نفسها */
-    background: rgba(0, 0, 0, 0.6);
-    color: var(--white);
-    border: none;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    font-size: 20px;
-    cursor: pointer;
-    transition: background 0.3s;
+    /* ... (جميع تنسيقات الأزرار) ... */
 }
-.slider-btn:hover {
-    background: var(--gold);
-}
-.slider{display:grid;grid-auto-flow:column;gap:18px;overflow:hidden;padding:18px}
-.slide{
-  min-width:320px;background:linear-gradient(180deg,#111,#1a1a1a);border-radius:12px;padding:14px;
-  box-shadow:0 10px 30px rgba(0,0,0,0.5);border:1px solid rgba(200,160,79,0.08)
-}
-.slide img{width:100%;height:180px;object-fit:cover;border-radius:8px}
-.slide h4{margin:10px 0 6px}
-.slide p{margin:0;color:var(--muted);font-size:13px}
-.slide .btn{margin-top:10px;display:inline-block;background:transparent;border:1px solid rgba(200,160,79,0.35);color:var(--gold);padding:8px 12px;border-radius:6px;text-decoration:none}
 
 /* Sections */
 section h3{color:var(--gold);margin:18px 0 6px;font-size:20px}
