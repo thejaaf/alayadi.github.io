@@ -8,6 +8,42 @@
   <!-- Cairo Font -->
   <link href="https://fonts.googleapis.com/css2?family=cairo:wght@400;700&display=swap" rel="stylesheet">
 
+<style>
+/* استعادة المتغيرات الأساسية والمظهر العام بشكل قسري */
+:root{
+  --black:#081F44;
+  --gold:#DC6601;
+  --white:#FFFFFF;
+  --gray:#14366D;
+  --muted:#1F3F74;
+  --container-max: 1100px;
+  --radius: 8px;
+  --font: 'Cairo', sans-serif;
+}
+html,body{height:101%}
+body{
+  margin:0;
+  font-family:var(--font);
+  color:var(--white);
+  background:linear-gradient(0deg,var(--gray),#DC6601);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.6;
+}
+.site-header{background:var(--black);position:sticky;top:0;z-index:50;border-bottom:4px solid rgba(200,160,79,0.06)}
+.header-inner{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
+.brand{display:flex;align-items:center;gap:14px}
+.logo-mark{
+  background:linear-gradient(135deg,var(--gold),#e0c27b);
+  color:var(--black);
+  font-weight:700;
+  padding:8px 14px;border-radius:6px;font-size:20px;
+}
+.slider{display:grid;grid-auto-flow:column;gap:18px;grid-auto-columns: 280px;overflow-x: auto;scroll-snap-type: x mandatory;}
+.slide{scroll-snap-align: start;width: 100%;max-height: 450px;background:linear-gradient(180deg,#111,#1a1a1a);border-radius:12px;padding:14px;}
+.slide img{height: 220px; object-fit: cover;}
+</style>
+  
   <link rel="stylesheet" href="styles.css" />
   <meta name="theme-color" content="#0D0D0D" />
 </head>
