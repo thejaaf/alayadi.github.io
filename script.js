@@ -69,8 +69,7 @@ window.moveSlider = function(direction) {
   siteData.projects.slice(0,4).forEach(p=>{
     const slide = document.createElement('article');
     slide.className = 'slide';
-    // إضافة معرف المشروع للربط بين الزر والتفاصيل لاحقاً
-    slide.dataset.projectId = p.id; 
+    slide.dataset.projectId = p.id; 
     slide.innerHTML = `
       <img src="${p.img}" alt="${p.title}" />
       <h4>${p.title}</h4>
@@ -79,14 +78,14 @@ window.moveSlider = function(direction) {
     `;
     slider.appendChild(slide);
   });
-  
+  
   // render projects grid
   const projectsGrid = document.getElementById('projectsGrid');
   projectsGrid.innerHTML = '';
   siteData.projects.forEach(p=>{
     const card = document.createElement('article');
     card.className = 'project-card';
-    card.dataset.projectId = p.id; 
+    card.dataset.projectId = p.id; 
     card.innerHTML = `
       <img src="${p.img}" alt="${p.title}" />
       <h4>${p.title}</h4>
@@ -122,50 +121,52 @@ window.moveSlider = function(direction) {
   });
 
 
-    // =======================================================
-    // 💡 كود النافذة المنبثقة (MODAL) المُصحَّح
-    // =======================================================
+    // =======================================================
+    // 💡 كود النافذة المنبثقة (MODAL) المُصحَّح
+    // =======================================================
 
     const modal = document.getElementById('project-modal');
     const closeBtn = modal.querySelector('.close-btn');
-    
-    // ✅ التصحيح: استهداف أزرار السلايدر (.slide .btn) وأزرار الشبكة (.project-card .btn)
-    const projectBtns = document.querySelectorAll('.slide .btn, .project-card .btn'); 
-    const modalTitle = modal.querySelector('.modal-title');
-    const modalImage = modal.querySelector('.modal-image img');
-    const modalCategory = modal.querySelector('.modal-category');
-    // لتبسيط المثال، يمكنك إضافة المزيد من العناصر هنا (مثل الموقع، المميزات)
-
+    
+    // ✅ التصحيح: استهداف أزرار السلايدر (.slide .btn) وأزرار الشبكة (.project-card .btn)
+    const projectBtns = document.querySelectorAll('.slide .btn, .project-card .btn'); 
+    const modalTitle = modal.querySelector('.modal-title');
+    const modalImage = modal.querySelector('.modal-image img');
+    const modalCategory = modal.querySelector('.modal-category');
+    const modalUl = modal.querySelector('.modal-info ul'); // استهداف قائمة المميزات
+    const modalAddress = modal.querySelector('.modal-info p:nth-of-type(3)'); // استهداف العنوان
+    
     // وظيفة لفتح النافذة
     function openModal() {
         modal.classList.add('is-visible');
-        document.body.style.overflow = 'hidden'; 
+        document.body.style.overflow = 'hidden'; 
     }
 
     // وظيفة لإغلاق النافذة
     function closeModal() {
         modal.classList.remove('is-visible');
-        document.body.style.overflow = ''; 
+        document.body.style.overflow = ''; 
     }
 
     // 1. فتح النافذة عند الضغط على زر التفاصيل
     projectBtns.forEach(button => {
         button.addEventListener('click', (e) => {
             e.preventDefault(); 
-            const projectId = button.dataset.projectId;
-            const projectDetails = siteData.projects.find(p => p.id === projectId);
-            
-            if (projectDetails) {
-                // تحديث محتوى النافذة المنبثقة ديناميكياً
-                modalTitle.textContent = projectDetails.title;
-                modalImage.src = projectDetails.img;
-                modalImage.alt = projectDetails.title;
-                modalCategory.textContent = projectDetails.desc; // استخدام الوصف كفئة للمثال
+            const projectId = button.dataset.projectId;
+            const projectDetails = siteData.projects.find(p => p.id === projectId);
+            
+            if (projectDetails) {
+                // تحديث محتوى النافذة المنبثقة ديناميكياً
+                modalTitle.textContent = projectDetails.title;
+                modalImage.src = projectDetails.img;
+                modalImage.alt = projectDetails.title;
+                modalCategory.textContent = projectDetails.desc; // استخدام الوصف كفئة للمثال
 
-                // ملاحظة: لملء باقي التفاصيل (الموقع، المميزات) يجب أن تحتوي بيانات المشروع (siteData.projects) على هذه الحقول
+                // هذه تفاصيل وهمية يجب أن تكون موجودة في siteData.projects إذا أردت عرضها بشكل ديناميكي
+                // إذا لم تكن موجودة، ستبقى التفاصيل المعروضة هي التفاصيل الثابتة في HTML.
 
-                openModal();
-            }
+                openModal();
+            }
         });
     });
 
