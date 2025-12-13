@@ -6,16 +6,16 @@
   --muted:#1F3F74;
   --container-max: 1100px;
   --radius: 8px;
-  --font: 'Cairo', sans-serif; /* 🟢 تم تصحيح الخط هنا */
+  --font: 'Cairo', sans-serif; /* 🟢 تصحيح: استخدام خط Cairo المربوط */
 }
 
 *{box-sizing:border-box}
-/* 🟢 التصحيح الأهم: استعادة الارتفاع الأصلي لمنع تخربط الخلفية */
-html,body{height:101%} 
+html,body{height:101%}
 body{
   margin:0;
   font-family:var(--font);
   color:var(--white);
+  /* 🟢 استعادة تدريج الخلفية */
   background:linear-gradient(0deg,var(--gray),#DC6601);
   -webkit-font-smoothing:antialiased;
   -moz-osx-font-smoothing:grayscale;
@@ -30,7 +30,7 @@ body{
 /* Container */
 .container{max-width:var(--container-max);margin:0 auto;padding:28px}
 
-/* Header */
+/* Header - استعادة لون الشريط العلوي */
 .site-header{background:var(--black);position:sticky;top:0;z-index:50;border-bottom:4px solid rgba(200,160,79,0.06)}
 .header-inner{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
 .brand{display:flex;align-items:center;gap:14px}
@@ -60,19 +60,15 @@ body{
 .hero-sub{margin:12px 0 20px;color:rgba(255,255,255,0.9)}
 .cta{display:inline-block;background:var(--gold);color:var(--black);padding:12px 20px;border-radius:6px;text-decoration:none;font-weight:700}
 
-/* Slider - تصحيح: إعادة التراصف الأفقي وحجم الشريحة */
+/* Slider - تصحيح: التراصف الأفقي وحجم الشريحة */
 .slider{
     display:grid;
     grid-auto-flow:column; 
     gap:18px;
-    
-    /* تحديد عرض الشريحة: 280 بكسل */
     grid-auto-columns: 280px; 
-    
     overflow-x: auto; 
     scroll-snap-type: x mandatory; 
     -webkit-overflow-scrolling: touch; 
-    
     padding:18px;
     -ms-overflow-style: none;
     scrollbar-width: none;
@@ -85,11 +81,8 @@ body{
 .slide {
     scroll-snap-align: start;
     width: 100%; 
-    
-    /* ارتفاع الشريحة: 450 بكسل لضمان ظهور الزر */
     max-height: 450px; 
     height: auto; 
-    
     background:linear-gradient(180deg,#111,#1a1a1a);
     border-radius:12px;
     padding:14px;
@@ -100,7 +93,7 @@ body{
 /* التحكم في ارتفاع الصورة داخل الشريحة (إذا كانت موجودة) */
 .slide img {
     width: 100%;
-    height: 220px; /* ارتفاع الصورة تم تحديده لتقليل ارتفاع البطاقة الكلي */
+    height: 220px; 
     object-fit: cover;
     border-radius: 8px;
     margin-bottom: 8px;
