@@ -15,6 +15,7 @@ body{
   margin:0;
   font-family:var(--font);
   color:var(--white);
+  /* 🟢 تصحيح: إعادة تدريج الألوان للخلفية وصورة البانر */
   background:linear-gradient(0deg,var(--gray),#DC6601);
   -webkit-font-smoothing:antialiased;
   -moz-osx-font-smoothing:grayscale;
@@ -59,7 +60,7 @@ body{
 .hero-sub{margin:12px 0 20px;color:rgba(255,255,255,0.9)}
 .cta{display:inline-block;background:var(--gold);color:var(--black);padding:12px 20px;border-radius:6px;text-decoration:none;font-weight:700}
 
-/* Slider */
+/* Slider - 🟢 تصحيح: إعادة التراصف الأفقي وحجم الشريحة */
 .slider{
     display:grid;
     grid-auto-flow:column; 
@@ -147,4 +148,225 @@ section h3{color:var(--gold);margin:18px 0 6px;font-size:20px}
 .contact-info p{margin:6px 0}
 .contact-map iframe{width:100%;height:220px;border:0;border-radius:8px}
 .contact-form{margin-top:12px;background:#0f0f0f;padding:14px;border-radius:10px;border:1px solid rgba(255,255,255,0.03)}
-.contact-form label{display:block;color:var(--muted);margin-top:8
+.contact-form label{display:block;color:var(--muted);margin-top:8px}
+.contact-form input,.contact-form textarea{width:100%;padding:10px;border-radius:6px;border:1px solid rgba(255,255,255,0.04);background:#101010;color:var(--white)}
+.btn{background:var(--gold);color:var(--black);padding:10px 14px;border-radius:8px;border:0;cursor:pointer}
+/* تنسيق أيقونات التواصل الاجتماعي */
+.socials .social-icon {
+    width: 38px;
+    height: 38px;
+    vertical-align: middle;
+    margin: 1 !important;
+}
+
+/* تطبيق نظام Flexbox وتوجيه العناصر عمودياً */
+.socials {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0px !important;
+    padding: 0 !important;
+}
+/* إزالة الخط تحت الروابط في قسم التواصل */
+.socials a {
+    text-decoration: none;
+  display: flex;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+/* Footer */
+.site-footer{background:var(--black);padding:18px 0;border-top:4px solid rgba(200,160,79,0.06);margin-top:28px}
+.footer-inner{display:flex;justify-content:space-between;align-items:center}
+.footer-nav a{color:var(--muted);margin-left:14px;text-decoration:none;font-size:14px}
+
+/* Responsive */
+@media (max-width:980px){
+  .project-grid,.companies-grid{grid-template-columns:repeat(3,1fr)}
+  .about-grid{grid-template-columns:1fr}
+  .contact-grid{grid-template-columns:1fr}
+  .nav-toggle{display:block}
+  .main-nav{display:none}
+}
+@media (max-width:640px){
+  .project-grid,.companies-grid{grid-template-columns:1fr}
+  .hero-title{font-size:28px}
+}
+
+/* ---------------------------------- */
+/* 2. Modal Styling (نافذة التفاصيل) - 🟢 مُعاد ومُصحَّح */
+/* ---------------------------------- */
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    visibility: hidden; 
+    opacity: 0;
+    transition: visibility 0s 0.4s, opacity 0.4s ease;
+    z-index: 1000; 
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* حالة إظهار النافذة */
+.modal.is-visible {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.4s ease;
+}
+
+/* تغطية الخلفية (Overlay) */
+.modal-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.9); 
+    backdrop-filter: blur(4px); 
+}
+
+/* محتوى النافذة (البطاقة الداخلية) */
+.modal-content {
+    position: relative;
+    max-width: 720px; /* العرض الأصغر */
+    width: 100%;
+    z-index: 1001; 
+    padding: 25px;
+    
+    /* منع الاختفاء: الحد الأقصى للارتفاع والتمرير الداخلي */
+    max-height: 90vh; 
+    overflow-y: auto; /* 🟢 تم تصحيح هذا إلى auto للتأكد من رؤية كل المحتوى، ورفعنا الـ z-index */
+    
+    transform: scale(0.9); 
+    transition: transform 0.4s ease;
+}
+
+/* الحركة عند الظهور */
+.modal.is-visible .modal-content {
+    transform: scale(1);
+}
+
+/* تصميم الزر (X) للإغلاق */
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: var(--gold);
+    color: var(--black);
+    border: none;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    font-size: 20px;
+    cursor: pointer;
+    line-height: 1;
+    z-index: 1002;
+    transition: background 0.3s;
+}
+.close-btn:hover {
+    background: #e0c27b;
+}
+
+/* شبكة تفاصيل المحتوى (صورة + نص) */
+.modal-details-grid {
+    display: grid;
+    /* الصورة على اليسار، النص على اليمين */
+    grid-template-columns: 1fr 1fr; 
+    gap: 30px; 
+    align-items: center; /* توسيط رأسي */
+}
+
+/* حاوية الصورة */
+.modal-image {
+    grid-column: 1 / 2; /* الصورة في العمود الأيسر (في وضع RTL) */
+    text-align: center; 
+}
+
+.modal-image img {
+    max-width: 100%;
+    object-fit: cover; /* لضمان التناسب وعدم التشوه */
+    height: 280px; 
+    border-radius: var(--radius);
+    display: block; 
+    margin: 0 auto; /* توسيط الصورة */
+}
+
+/* تفاصيل النص */
+.modal-info {
+    grid-column: 2 / 3; /* النص في العمود الأيمن (في وضع RTL) */
+    text-align: right; /* محاذاة النص لليمين */
+}
+
+.modal-title {
+    color: var(--gold);
+    margin: 0 0 5px 0;
+    font-size: 24px;
+    font-family: var(--font);
+}
+.modal-category {
+    color: var(--muted);
+    font-size: 16px; 
+    margin-bottom: 15px;
+    font-family: var(--font);
+}
+.modal-info h3 {
+    color: var(--white);
+    font-size: 19px; 
+    margin: 15px 0 8px;
+    font-family: var(--font);
+}
+.modal-info ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 0;
+}
+.modal-info li {
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 7px;
+    position: relative;
+    padding-right: 20px;
+    font-size: 15px; 
+    font-family: var(--font);
+}
+.modal-info li::before {
+    content: '★';
+    color: var(--gold);
+    position: absolute;
+    right: 0;
+    font-size: 12px;
+    line-height: 1.6;
+}
+.modal-divider {
+    border: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    margin: 15px 0;
+}
+.map-link {
+    margin-top: 15px;
+    display: inline-block;
+}
+
+/* استجابة الشاشات الصغيرة */
+@media (max-width: 768px) {
+    .modal-details-grid {
+        grid-template-columns: 1fr; 
+    }
+    .modal-image {
+        grid-column: 1 / -1; 
+    }
+    .modal-info {
+        grid-column: 1 / -1; 
+        text-align: right; 
+    }
+    .modal-content {
+        max-width: 95%; 
+        padding: 15px;
+    }
+    .modal-image img {
+        height: 200px;
+    }
+}
