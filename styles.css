@@ -205,18 +205,38 @@ section h3{color:var(--gold);font-size:20px}
 }
 
 /* Companies */
-.companies-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:18px;
+/* 4. تحديث قسم الشركات والمعامل */
+.companies-grid {
+    display: grid;
+    /* 💡 زيادة عدد الأعمدة: 4 بطاقات في سطر واحد على الشاشات الكبيرة */
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 15px; /* تقليل المسافة بين البطاقات */
 }
 
-.company-card{
-  background:#111;
-  padding:14px;
-  border-radius:10px;
+.company-card {
+    background: #111;
+    padding: 10px; /* تقليل المسافة الداخلية للبطاقة */
+    border-radius: 8px;
+    text-align: center;
 }
 
+/* تأكد من أن الصور في البطاقة صغيرة */
+.company-card img {
+    max-width: 100%;
+    height: 80px; /* تحديد ارتفاع صغير للصور داخل البطاقة */
+    object-fit: contain; /* للحفاظ على نسب الصورة */
+}
+
+/* تكييف الشاشات الصغيرة: ارجعها إلى 2 أو 1 عمود */
+@media(max-width:980px){
+  .project-grid{grid-template-columns:repeat(2,1fr)}
+  .companies-grid{grid-template-columns:repeat(3,1fr)} /* 3 أعمدة على شاشات الأجهزة اللوحية */
+  /* ... */
+}
+@media(max-width:640px){
+  .project-grid,.companies-grid{grid-template-columns:1fr}
+  /* ... */
+}
 /* Contact */
 .contact-map iframe{
   width:100%;
