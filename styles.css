@@ -221,25 +221,9 @@ section h3{color:var(--gold);font-size:20px}
 }
 
 /* Footer */
-.site-footer{
-  background:var(--black);
-  padding:18px 0;
-  border-top:4px solid rgba(200,160,79,.06);
-  margin-top:28px;
-}
-
-.footer-inner{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-}
-
-.footer-nav a{
-  color:var(--muted);
-  margin-left:14px;
-  text-decoration:none;
-  font-size:14px;
-}
+.site-footer{background:var(--black);padding:18px 0;border-top:4px solid rgba(200,160,79,0.06);margin-top:28px}
+.footer-inner{display:flex;justify-content:space-between;align-items:center}
+.footer-nav a{color:var(--muted);margin-left:14px;text-decoration:none;font-size:14px}
 
 /* Modal */
 .modal{
