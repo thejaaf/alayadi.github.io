@@ -1,4 +1,4 @@
-// script.js — بسيط لإظهار البيانات الممكن تعديلها من لوحة الإدارة (localStorage)
+/* script.js — بسيط لإظهار البيانات الممكن تعديلها من لوحة الإدارة (localStorage) */
 (function(){
   const defaults = {
     heroImage: 'https://images.unsplash.com/photo-1508057198894-247b23fe5ade?auto=format&fit=crop&w=1600&q=80',
