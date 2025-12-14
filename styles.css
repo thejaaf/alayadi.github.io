@@ -1,91 +1,116 @@
 :root{
-  --black:#081F44;
-  --gold:#DC6601;
-  --white:#FFFFFF;
-  --gray:#14366D;
-  --muted:#1F3F74;
-  --container-max:1100px;
-  --radius:8px;
-  --font:'Cairo',sans-serif;
+  --black:#081F44;
+  --gold:#DC6601;
+  --white:#FFFFFF;
+  --gray:#14366D;
+  --muted:#1F3F74;
+  --container-max:1100px;
+  --radius:8px;
+  --font:'Cairo',sans-serif;
 }
 
 *{box-sizing:border-box}
 
 html,body{height:100%}
 
-body {
-    /* التدرج الجديد: أكثر نعومة بين النيلي (كـ Gray/Blue) والبرتقالي (Gold) */
-    background: linear-gradient(150deg, var(--gray) 0%, var(--gold) 100%);
-    color: var(--white); /* ⬅️ لضمان أن النص ليس أسود على الخلفية الداكنة */
-    background-attachment: fixed;
-    line-height: 1.6;
+body{
+  margin:0;
+  font-family:var(--font);
+  color:var(--white);
+  background:linear-gradient(0deg,var(--gray),var(--gold));
+  -webkit-font-smoothing:antialiased;
+  line-height:1.6;
 }
+
 /* Card */
 .card{
-  background:rgba(20,20,20,.85);
-  backdrop-filter:blur(6px);
-  border-radius:14px;
+  background:rgba(20,20,20,.85);
+  backdrop-filter:blur(6px);
+  border-radius:14px;
 }
 
 /* Container */
 .container{
-  max-width:var(--container-max);
-  margin:0 auto;
-  padding:28px;
+  max-width:var(--container-max);
+  margin:0 auto;
+  padding:28px;
 }
 
 /* Header */
-.site-header {
-    background: var(--black);
-    position: sticky;
-    top: 0;
-    z-index: 50;
-    border-bottom: 4px solid rgba(200, 160, 79, 0.06);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* إضافة ظل خفيف */
+.site-header .container{
+  padding: 10px 20px; /* بدل 28px */
 }
 
-.site-header .container {
-    padding: 8px 20px; /* 💡 تقليل الارتفاع العلوي والسفلي */
+.brand-text h1{
+  font-size:16px;
 }
 
-/* 💡 أكواد القائمة (إذا لم تكن موجودة أضفها) */
-.header-inner {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.brand-text p{
+  font-size:11px;
 }
 
-.main-nav a {
-    color: var(--white); /* 💡 التعديل: لضمان ظهور الروابط باللون الأبيض */
-    text-decoration: none;
-    margin-left: 14px; /* 💡 تقليل المسافة البينية */
-    font-weight: 600;
-    font-size: 0.9rem; /* 💡 تصغير الخط قليلاً */
-    padding: 4px 0; /* 💡 تقليل الـ padding الرأسي للروابط */
+.site-header{
+  background:var(--black);
+  position:sticky;
+  top:0;
+  z-index:50;
+  border-bottom:4px solid rgba(200,160,79,.06);
 }
 
-.main-nav a.admin-link {
-    background: var(--gold);
-    color: var(--black);
-    padding: 6px 10px; /* 💡 تصغير حجم الزر الإداري */
-    border-radius: 6px;
+.header-inner{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
 }
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:14px;
+}
+
+.logo-mark{
+  background:linear-gradient(135deg,var(--gold),#e0c27b);
+  color:var(--black);
+  font-weight:700;
+  padding:8px 14px;
+  border-radius:6px;
+  font-size:20px;
+}
+
+.brand-text h1{margin:0;font-size:18px}
+.brand-text p{margin:0;color:var(--muted);font-size:12px}
+
+.main-nav a{
+  color:var(--white);
+  text-decoration:none;
+  margin-left:18px;
+  font-weight:600;
+}
+
+.main-nav a.admin-link{
+  background:var(--gold);
+  color:var(--black);
+  padding:8px 12px;
+  border-radius:6px;
+}
+
 .nav-toggle{
-  display:none;
-  background:none;
-  border:0;
-  color:var(--white);
-  font-size:22px;
+  display:none;
+  background:none;
+  border:0;
+  color:var(--white);
+  font-size:22px;
 }
 
 /* Hero */
 .hero{
-  min-height:52vh;
-  background-image:var(--hero-bg);
-  background-size:cover;
-  background-position:center;
-  display:flex;
-  align-items:center;
+  min-height:52vh;
+  background-image:var(--hero-bg);
+  background-size:cover;
+  background-position:center;
+  display:flex;
+  align-items:center;
 }
 
 .hero-content{padding:56px 20px}
@@ -94,197 +119,134 @@ body {
 
 /* Slider */
 .slider{
-  display:grid;
-  grid-auto-flow:column;
-  grid-auto-columns:280px;
-  gap:18px;
-  overflow-x:auto;
-  scroll-snap-type:x mandatory;
-  padding:18px;
-  scrollbar-width:none;
+  display:grid;
+  grid-auto-flow:column;
+  grid-auto-columns:280px;
+  gap:18px;
+  overflow-x:auto;
+  scroll-snap-type:x mandatory;
+  padding:18px;
+  scrollbar-width:none;
 }
 .slider::-webkit-scrollbar{display:none}
 
 .slide{
-  scroll-snap-align:start;
-  background:linear-gradient(180deg,#111,#1a1a1a);
-  border-radius:12px;
-  padding:14px;
-  box-shadow:0 10px 30px rgba(0,0,0,.5);
+  scroll-snap-align:start;
+  background:linear-gradient(180deg,#111,#1a1a1a);
+  border-radius:12px;
+  padding:14px;
+  box-shadow:0 10px 30px rgba(0,0,0,.5);
 }
 
 .slide img{
-  width:100%;
-  height:220px;
-  object-fit:cover;
-  border-radius:8px;
-  margin-bottom:8px;
+  width:100%;
+  height:220px;
+  object-fit:cover;
+  border-radius:8px;
+  margin-bottom:8px;
 }
 
 /* Sections */
-/* 💡 التعديل: ضمان لون العناوين باللون الذهبي */
-section h4, section h3, .slide h4, .project-card h4, .company-card h5 {
-    color: var(--gold); 
-    margin-top: 5px;
-    margin-bottom: 5px;
-}
-
+section h3{color:var(--gold);font-size:20px}
 .section-desc{color:var(--muted)}
+
 .about-grid{
-  display:grid;
-  grid-template-columns:1fr 420px;
-  gap:28px;
-  align-items:center;
+  display:grid;
+  grid-template-columns:1fr 420px;
+  gap:28px;
+  align-items:center;
 }
 
 .about-visual img{
-  width:100%;
-  height:260px;
-  object-fit:cover;
-  border-radius:10px;
+  width:100%;
+  height:260px;
+  object-fit:cover;
+  border-radius:10px;
 }
 
 /* Stats */
 .stats{
-  display:flex;
-  gap:10px;
-  list-style:none;
-  padding:0;
+  display:flex;
+  gap:10px;
+  list-style:none;
+  padding:0;
 }
 
 .stats li{
-  background:#0f0f0f;
-  padding:14px;
-  border-radius:8px;
-  text-align:center;
+  background:#0f0f0f;
+  padding:14px;
+  border-radius:8px;
+  text-align:center;
 }
 
 /* Projects */
 .project-grid{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:18px;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:18px;
 }
 
 .project-card{
-  background:#0f0f0f;
-  padding:16px;
-  border-radius:10px;
+  background:#0f0f0f;
+  padding:16px;
+  border-radius:10px;
 }
 
 .project-card img{
-  width:100%;
-  height:160px;
-  object-fit:cover;
-  border-radius:8px;
+  width:100%;
+  height:160px;
+  object-fit:cover;
+  border-radius:8px;
 }
 
 /* Buttons */
 .btn{
-  display:inline-block;
-  background:var(--gold);
-  color:var(--black);
-  padding:10px 22px;
-  border-radius:25px;
-  font-weight:700;
-  text-decoration:none;
-  margin-top:10px;
-  text-align:center;
-}
-/* ⚡ التأثير التفاعلي والسلاسة */
-    transition: all 0.3s ease-in-out;
-    border: none;
+  display:inline-block;
+  background:var(--gold);
+  color:var(--black);
+  padding:8px 14px;
+  border-radius:6px;
+  font-weight:700;
+  text-decoration:none;
+  margin-top:10px;
+  text-align:center;
 }
 
-.btn:hover {
-    background: #ff8c00; /* درجة أغمق أو أفتح من البرتقالي */
-    color: var(--white); /* تغيير لون النص عند التفاعل */
-    box-shadow: 0 4px 15px rgba(220, 102, 1, 0.4); /* ظل جذاب */
-    transform: translateY(-2px); /* صعود طفيف للأعلى */
-}
 .project-card .actions{
-  text-align:center;
+  text-align:center;
 }
 
 /* Companies */
-/* 4. تحديث قسم الشركات والمعامل */
-.companies-grid {
-    display: grid;
-    /* 💡 زيادة عدد الأعمدة: 4 بطاقات في سطر واحد على الشاشات الكبيرة */
-    grid-template-columns: repeat(4, 1fr); 
-    gap: 15px; /* تقليل المسافة بين البطاقات */
+.companies-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
 }
 
-.company-card {
-    background: #111;
-    padding: 10px; /* تقليل المسافة الداخلية للبطاقة */
-    border-radius: 8px;
-    text-align: center;
+.company-card{
+  background:#111;
+  padding:14px;
+  border-radius:10px;
 }
 
-/* تأكد من أن الصور في البطاقة صغيرة */
-.company-card img {
-    max-width: 100%;
-    height: 80px; /* تحديد ارتفاع صغير للصور داخل البطاقة */
-    object-fit: contain; /* للحفاظ على نسب الصورة */
-}
-
-/* تكييف الشاشات الصغيرة: ارجعها إلى 2 أو 1 عمود */
-@media(max-width:980px){
-  .project-grid{grid-template-columns:repeat(2,1fr)}
-  .companies-grid{grid-template-columns:repeat(3,1fr)} /* 3 أعمدة على شاشات الأجهزة اللوحية */
-  /* ... */
-}
-@media(max-width:640px){
-  .project-grid,.companies-grid{grid-template-columns:1fr}
-  /* ... */
-}
 /* Contact */
-/* 6. تنسيق الخريطة */
-
-.contact-map {
-    margin-top: 20px;
-    /* وضع الخريطة في اليسار */
-    text-align: left; /* إذا كانت .contact-map تحتوي على iframe فقط، هذا يساعد على محاذاته */
-}
-
-.contact-map iframe {
-    width: 300px; /* 💡 العرض */
-    height: 300px; /* 💡 الارتفاع (مربع) */
-    display: block; /* لضمان تطبيق الأبعاد والمحاذاة بشكل صحيح */
-    margin-left: 0;
-    margin-right: auto;
-    
-    /* 💡 الحواف الدائرية على اليسار فقط (الزاوية العلوية اليسرى، الزاوية العلوية اليمنى، الزاوية السفلية اليمنى، الزاوية السفلية اليسرى) */
-    border-radius: 20px 0 0 20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    border: 0;
+.contact-map iframe{
+  width:100%;
+  height:220px;
+  border-radius:8px;
+  border:0;
 }
 
 /* Socials */
-/* 5. ترتيب قسم التواصل (Contact Section) - ابدأ هنا */
-
-/* تقليل المسافات بين الأرقام والنصوص */
-.contact-info p {
-    margin-top: 2px;
-    margin-bottom: 2px; /* تقليل كبير للمسافات بين الأرقام والنصوص */
-    line-height: 1.2;
+.socials{
+  display:flex;
+  flex-direction:column;
 }
 
-/* أيقونات التواصل - جعلها متراصفة جنباً إلى جنب */
-.socials {
-    display: flex; /* 💡 التعديل الحاسم: للعرض الأفقي */
-    flex-direction: row; /* التأكيد على الاتجاه الأفقي */
-    align-items: center;
-    gap: 15px; /* مسافة واضحة بين الأيقونات */
-    margin-top: 10px;
-}
-
-.socials img {
-    width: 32px; /* 💡 تصغير حجم الأيقونة */
-    height: 32px;
-    transition: transform 0.3s;
-    margin: 0; /* حذف أي مسافات إضافية */
+.socials img{
+  width:38px;
+  height:38px;
+  margin:1px;
 }
 
 /* Footer */
@@ -293,75 +255,65 @@ section h4, section h3, .slide h4, .project-card h4, .company-card h5 {
 .footer-nav a{color:var(--muted);margin-left:14px;text-decoration:none;font-size:14px}
 
 /* Modal */
-/* 3. سلاسة النافذة المنبثقة وتنسيقها */
-.modal {
-    /* الإعدادات الأساسية جيدة، لكن سنضيف transform */
-    visibility: hidden;
-    opacity: 0;
-    transition: opacity 0.4s ease, visibility 0.4s; /* سلاسة الإخفاء والظهور */
-    z-index: 9999;
+.modal{
+  position:fixed;
+  inset:0;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  visibility:hidden;
+  opacity:0;
+  transition:.4s;
 }
 
-.modal.is-visible {
-    visibility: visible;
-    opacity: 1;
+.modal.is-visible{
+  visibility:visible;
+  opacity:1;
 }
 
-.modal-content {
-    /* الشكل العصري: حواف دائرية، مظهر عائم */
-    border-radius: 16px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
-    padding: 30px;
-    
-    /* ⚡ التأثير السلس للحجم */
-    transform: scale(0.95); /* حجم أصغر قليلاً عند الإخفاء */
-    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* منحنى حركة سلس */
+.modal-overlay{
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,.9);
 }
 
-.modal.is-visible .modal-content {
-    transform: scale(1); /* الحجم الطبيعي عند الظهور */
+.modal-content{
+  position:relative;
+  max-width:900px;
+  width:90%;
+  max-height:85vh;
+  padding:25px;
+  overflow-y:auto;
+}
+.modal-details-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:20px;
 }
 
-/* ترتيب محتوى البوكس */
-.modal-details-grid {
-    grid-template-columns: 1fr 1.5fr; /* إعطاء مساحة أكبر للنص */
-    gap: 25px;
-    text-align: right; /* محاذاة النص لليمين */
+.modal-image img{
+  width:100%;
+  height:280px;
+  object-fit:cover;
+  border-radius:10px;
 }
 
-/* توسيط الصورة */
-.modal-image {
-    display: flex; /* لضمان التوسيط الرأسي والأفقي */
-    justify-content: center;
-    align-items: flex-start; /* تبدأ من الأعلى */
-}
-
-/* تقليل المسافات بين الأسطر (Line Height) */
-.modal-info p, .modal-info ul li {
-    line-height: 1.4; /* تقليل المسافة بين الأسطر */
-    margin-bottom: 8px;
-    color: rgba(255, 255, 255, 0.9);
-}
-
-.modal-info h2, .modal-info h3 {
-    margin-top: 10px;
-    margin-bottom: 5px;
-}:700px){
-  .modal-details-grid{
-    grid-template-columns:1fr;
-  }
+@media(max-width:700px){
+  .modal-details-grid{
+    grid-template-columns:1fr;
+  }
 }
 
 
 /* Responsive */
 @media(max-width:980px){
-  .project-grid,.companies-grid{grid-template-columns:repeat(2,1fr)}
-  .about-grid{grid-template-columns:1fr}
-  .nav-toggle{display:block}
-  .main-nav{display:none}
+  .project-grid,.companies-grid{grid-template-columns:repeat(2,1fr)}
+  .about-grid{grid-template-columns:1fr}
+  .nav-toggle{display:block}
+  .main-nav{display:none}
 }
 
 @media(max-width:640px){
-  .project-grid,.companies-grid{grid-template-columns:1fr}
-  .hero-title{font-size:28px}
+  .project-grid,.companies-grid{grid-template-columns:1fr}
+  .hero-title{font-size:28px}
 }
