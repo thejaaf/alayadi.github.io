@@ -169,6 +169,9 @@ window.moveSlider = function(direction) {
 
  // ... الكود داخل دالة النقر
   if(projectDetails){
+    const modalTitle = modal.querySelector('.modal-title');
+    const modalImage = modal.querySelector('.modal-image img');
+    const modalCategory = modal.querySelector('.modal-category');
     modalTitle.textContent = projectDetails.title;
     modalImage.src = projectDetails.img;
     modalCategory.textContent = projectDetails.desc;
@@ -182,10 +185,6 @@ window.moveSlider = function(direction) {
     openModal();
   }
 });
- 
-    const modalTitle = modal.querySelector('.modal-title');
-    const modalImage = modal.querySelector('.modal-image img');
-    const modalCategory = modal.querySelector('.modal-category');
     const modalUl = modal.querySelector('.modal-info ul'); // استهداف قائمة المميزات
     const modalAddress = modal.querySelector('.modal-info p:nth-of-type(3)'); // استهداف العنوان
     
@@ -202,7 +201,6 @@ window.moveSlider = function(direction) {
     }
 
     // 1. فتح النافذة عند الضغط على زر التفاصيل
-    projectBtns.forEach(button => {
         button.addEventListener('click', (e) => {
             e.preventDefault(); 
             const projectId = button.dataset.projectId;
