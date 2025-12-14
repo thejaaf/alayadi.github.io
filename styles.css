@@ -13,13 +13,18 @@
 
 html,body{height:100%}
 
-body{
-  margin:0;
-  font-family:var(--font);
-  color:var(--white);
-  background:linear-gradient(0deg,var(--gray),var(--gold));
-  -webkit-font-smoothing:antialiased;
-  line-height:1.6;
+/* 7. تحديث تدرج الخلفية (تم إصلاحها هنا) */
+body {
+    margin:0;
+    font-family:var(--font);
+    color:var(--white); /* ✅ تم التأكد من لون الكتابة */
+    
+    /* 💡 التعديل الهام: لارجاع الخلفية وتثبيتها */
+    background: linear-gradient(150deg, var(--gray) 0%, var(--gold) 100%); 
+    background-attachment: fixed; /* ⬅️ هذا هو السطر الذي يجعل الخلفية تظهر في كامل الصفحة */
+    
+    -webkit-font-smoothing:antialiased;
+    line-height:1.6;
 }
 
 /* Card */
@@ -37,30 +42,25 @@ body{
 }
 
 /* Header */
-.site-header .container{
-  padding: 10px 20px; /* بدل 28px */
+/* 1. تصغير وتحديث الشريط العلوي (Header) */
+.site-header {
+    background: var(--black);
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    border-bottom: 4px solid rgba(200, 160, 79, 0.06);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* إضافة ظل خفيف */
 }
 
-.brand-text h1{
-  font-size:16px;
+.site-header .container {
+    padding: 8px 20px; /* 💡 تقليل الارتفاع العلوي والسفلي */
 }
 
-.brand-text p{
-  font-size:11px;
-}
-
-.site-header{
-  background:var(--black);
-  position:sticky;
-  top:0;
-  z-index:50;
-  border-bottom:4px solid rgba(200,160,79,.06);
-}
-
-.header-inner{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
+/* 💡 أكواد القائمة */
+.header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .brand{
@@ -81,18 +81,20 @@ body{
 .brand-text h1{margin:0;font-size:18px}
 .brand-text p{margin:0;color:var(--muted);font-size:12px}
 
-.main-nav a{
-  color:var(--white);
-  text-decoration:none;
-  margin-left:18px;
-  font-weight:600;
+.main-nav a {
+    color: var(--white); /* ✅ تم التأكد من لون الروابط */
+    text-decoration: none;
+    margin-left: 14px; /* 💡 تقليل المسافة البينية */
+    font-weight: 600;
+    font-size: 0.9rem; /* 💡 تصغير الخط قليلاً */
+    padding: 4px 0; /* 💡 تقليل الـ padding الرأسي للروابط */
 }
 
-.main-nav a.admin-link{
-  background:var(--gold);
-  color:var(--black);
-  padding:8px 12px;
-  border-radius:6px;
+.main-nav a.admin-link {
+    background: var(--gold);
+    color: var(--black);
+    padding: 6px 10px; /* 💡 تصغير حجم الزر الإداري */
+    border-radius: 6px;
 }
 
 .nav-toggle{
@@ -102,6 +104,7 @@ body{
   color:var(--white);
   font-size:22px;
 }
+
 
 /* Hero */
 .hero{
@@ -147,7 +150,13 @@ body{
 }
 
 /* Sections */
-section h3{color:var(--gold);font-size:20px}
+/* 💡 تم إعادة إضافة تنسيق العناوين للتأكد من وضوحها */
+section h4, section h3, .slide h4, .project-card h4, .company-card h5 {
+    color: var(--gold); 
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
 .section-desc{color:var(--muted)}
 
 .about-grid{
@@ -204,12 +213,22 @@ section h3{color:var(--gold);font-size:20px}
   display:inline-block;
   background:var(--gold);
   color:var(--black);
-  padding:8px 14px;
-  border-radius:6px;
+  padding:10px 22px; /* تم تعديل الحجم ليكون أكبر قليلاً */
+  border-radius:25px; /* تم تعديل الحواف لتكون دائرية أكثر */
   font-weight:700;
   text-decoration:none;
   margin-top:10px;
   text-align:center;
+  /* ⚡ تم إعادة إضافة التأثيرات التفاعلية والسلاسة المفقودة */
+    transition: all 0.3s ease-in-out; 
+    border: none;
+}
+
+.btn:hover {
+    background: #ff8c00; /* درجة أغمق أو أفتح من البرتقالي */
+    color: var(--white); /* تغيير لون النص عند التفاعل */
+    box-shadow: 0 4px 15px rgba(220, 102, 1, 0.4); /* ظل جذاب */
+    transform: translateY(-2px); /* صعود طفيف للأعلى */
 }
 
 .project-card .actions{
@@ -219,7 +238,7 @@ section h3{color:var(--gold);font-size:20px}
 /* Companies */
 .companies-grid{
   display:grid;
-  grid-template-columns:repeat(3,1fr);
+  grid-template-columns:repeat(4,1fr); /* 💡 تم تعديلها إلى 4 أعمدة مرة أخرى */
   gap:18px;
 }
 
@@ -240,13 +259,15 @@ section h3{color:var(--gold);font-size:20px}
 /* Socials */
 .socials{
   display:flex;
-  flex-direction:column;
+  flex-direction:row; /* 💡 تم تعديلها لتكون أفقية */
+  gap:10px;
+  margin-top:10px;
 }
 
 .socials img{
-  width:38px;
-  height:38px;
-  margin:1px;
+  width:32px; /* 💡 تم تصغير الحجم قليلاً */
+  height:32px;
+  margin:0;
 }
 
 /* Footer */
@@ -264,6 +285,7 @@ section h3{color:var(--gold);font-size:20px}
   visibility:hidden;
   opacity:0;
   transition:.4s;
+  z-index: 9999;
 }
 
 .modal.is-visible{
@@ -284,6 +306,8 @@ section h3{color:var(--gold);font-size:20px}
   max-height:85vh;
   padding:25px;
   overflow-y:auto;
+  border-radius: 16px; /* ✅ إضافة حواف دائرية */
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
 }
 .modal-details-grid{
   display:grid;
