@@ -162,7 +162,7 @@ window.moveSlider = function(direction) {
     document.addEventListener('click', function(e){
   const btn = e.target.closest('.open-modal-btn');
   if(!btn) return;
-
+    }
   e.preventDefault();
   const projectId = btn.dataset.projectId;
   const projectDetails = siteData.projects.find(p => p.id === projectId);
@@ -185,9 +185,7 @@ window.moveSlider = function(direction) {
     openModal();
   }
 });
-    const modalUl = modal.querySelector('.modal-info ul'); // استهداف قائمة المميزات
-    const modalAddress = modal.querySelector('.modal-info p:nth-of-type(3)'); // استهداف العنوان
-    
+
     // وظيفة لفتح النافذة
     function openModal() {
         modal.classList.add('is-visible');
@@ -200,9 +198,7 @@ window.moveSlider = function(direction) {
         document.body.style.overflow = ''; 
     }
 
-    // 1. فتح النافذة عند الضغط على زر التفاصيل
-        button.addEventListener('click', (e) => {
-            e.preventDefault(); 
+            e.preventDefault(); 
             const projectId = button.dataset.projectId;
             const projectDetails = siteData.projects.find(p => p.id === projectId);
             
