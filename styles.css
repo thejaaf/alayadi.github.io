@@ -15,20 +15,15 @@ html,body{height:100%}
 
 /* 7. تحديث تدرج الخلفية */
 body {
-    /* التدرج القديم: background:linear-gradient(0deg,var(--gray),var(--gold)); كان انتقالاً حاداً */
-    
-    /* 💡 التدرج الجديد: أكثر نعومة بين النيلي (كـ Gray/Blue) والبرتقالي (Gold) */
-    background: linear-gradient(150deg, var(--gray) 0%, var(--gold) 100%);
-    
-    /* استخدام var(--gray) وهو #14366D (النيلي الداكن)
-       و var(--gold) وهو #DC6601 (البرتقالي) */
-    
-    /* لجعل الانتقال ضبابياً/متداخلاً أكثر: نستخدم زاوية مائلة (150deg)
-       ونتجنب نقاط التوقف الحادة في المنتصف */
-    background-attachment: fixed; /* للحفاظ على الخلفية ثابتة أثناء التمرير */
-    line-height: 1.6;
+    /* التدرج الجديد: أكثر نعومة بين النيلي (كـ Gray/Blue) والبرتقالي (Gold) */
+    background: linear-gradient(150deg, var(--gray) 0%, var(--gold) 100%);
+    
+    /* 💡 التعديل الذي أضفناه لارجاع اللون الأبيض للنص */
+    color: var(--white); /* ⬅️ لضمان أن النص ليس أسود على الخلفية الداكنة */
+    
+    background-attachment: fixed;
+    line-height: 1.6;
 }
-
 /* Card */
 .card{
   background:rgba(20,20,20,.85);
@@ -66,10 +61,10 @@ body {
 }
 
 .main-nav a {
-    color: var(--white);
-    text-decoration: none;
-    margin-left: 14px; /* 💡 تقليل المسافة البينية */
-    font-weight: 600;
+    color: var(--white); /* 💡 التعديل: لضمان ظهور الروابط باللون الأبيض */
+    text-decoration: none;
+    margin-left: 14px; /* 💡 تقليل المسافة البينية */
+    font-weight: 600;
     font-size: 0.9rem; /* 💡 تصغير الخط قليلاً */
     padding: 4px 0; /* 💡 تقليل الـ padding الرأسي للروابط */
 }
@@ -132,9 +127,14 @@ body {
 }
 
 /* Sections */
-section h3{color:var(--gold);font-size:20px}
-.section-desc{color:var(--muted)}
+/* 💡 التعديل: ضمان لون العناوين باللون الذهبي */
+section h4, section h3, .slide h4, .project-card h4, .company-card h5 {
+    color: var(--gold); 
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
 
+.section-desc{color:var(--muted)}
 .about-grid{
   display:grid;
   grid-template-columns:1fr 420px;
