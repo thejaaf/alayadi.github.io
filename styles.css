@@ -150,8 +150,6 @@ p,
     }
 }
 /* Sections */
-section h3{color:var(--gold);margin:18px 0 6px;font-size:20px}
-.section-desc{color:var(--muted);margin-bottom:12px}
 .about-grid{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center}
 .about-visual img{width:100%;border-radius:10px;object-fit:cover;height:260px}
 .stats{display:flex;gap:10px;margin-top:18px;list-style:none;padding:0}
