@@ -149,7 +149,7 @@ section h3{color:var(--gold);margin:18px 0 6px;font-size:20px}
     width: 38px;
     height: 38px;
     vertical-align: middle;
-    margin: 1 !important;
+    margin: 1px !important;
 }
 
 /* تطبيق نظام Flexbox وتوجيه العناصر عمودياً */
