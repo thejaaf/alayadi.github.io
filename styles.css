@@ -37,64 +37,42 @@ body{
 }
 
 /* Header */
-.site-header .container{
-  padding: 10px 20px; /* بدل 28px */
+/* 1. تصغير وتحديث الشريط العلوي (Header) */
+.site-header {
+    background: var(--black);
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    border-bottom: 4px solid rgba(200, 160, 79, 0.06);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* إضافة ظل خفيف */
 }
 
-.brand-text h1{
-  font-size:16px;
+.site-header .container {
+    padding: 8px 20px; /* 💡 تقليل الارتفاع العلوي والسفلي */
 }
 
-.brand-text p{
-  font-size:11px;
+/* 💡 أكواد القائمة (إذا لم تكن موجودة أضفها) */
+.header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.site-header{
-  background:var(--black);
-  position:sticky;
-  top:0;
-  z-index:50;
-  border-bottom:4px solid rgba(200,160,79,.06);
+.main-nav a {
+    color: var(--white);
+    text-decoration: none;
+    margin-left: 14px; /* 💡 تقليل المسافة البينية */
+    font-weight: 600;
+    font-size: 0.9rem; /* 💡 تصغير الخط قليلاً */
+    padding: 4px 0; /* 💡 تقليل الـ padding الرأسي للروابط */
 }
 
-.header-inner{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
+.main-nav a.admin-link {
+    background: var(--gold);
+    color: var(--black);
+    padding: 6px 10px; /* 💡 تصغير حجم الزر الإداري */
+    border-radius: 6px;
 }
-
-.brand{
-  display:flex;
-  align-items:center;
-  gap:14px;
-}
-
-.logo-mark{
-  background:linear-gradient(135deg,var(--gold),#e0c27b);
-  color:var(--black);
-  font-weight:700;
-  padding:8px 14px;
-  border-radius:6px;
-  font-size:20px;
-}
-
-.brand-text h1{margin:0;font-size:18px}
-.brand-text p{margin:0;color:var(--muted);font-size:12px}
-
-.main-nav a{
-  color:var(--white);
-  text-decoration:none;
-  margin-left:18px;
-  font-weight:600;
-}
-
-.main-nav a.admin-link{
-  background:var(--gold);
-  color:var(--black);
-  padding:8px 12px;
-  border-radius:6px;
-}
-
 .nav-toggle{
   display:none;
   background:none;
@@ -204,14 +182,24 @@ section h3{color:var(--gold);font-size:20px}
   display:inline-block;
   background:var(--gold);
   color:var(--black);
-  padding:8px 14px;
-  border-radius:6px;
+  padding:10px 22px;
+  border-radius:25px;
   font-weight:700;
   text-decoration:none;
   margin-top:10px;
   text-align:center;
 }
+/* ⚡ التأثير التفاعلي والسلاسة */
+    transition: all 0.3s ease-in-out;
+    border: none;
+}
 
+.btn:hover {
+    background: #ff8c00; /* درجة أغمق أو أفتح من البرتقالي */
+    color: var(--white); /* تغيير لون النص عند التفاعل */
+    box-shadow: 0 4px 15px rgba(220, 102, 1, 0.4); /* ظل جذاب */
+    transform: translateY(-2px); /* صعود طفيف للأعلى */
+}
 .project-card .actions{
   text-align:center;
 }
@@ -255,50 +243,60 @@ section h3{color:var(--gold);font-size:20px}
 .footer-nav a{color:var(--muted);margin-left:14px;text-decoration:none;font-size:14px}
 
 /* Modal */
-.modal{
-  position:fixed;
-  inset:0;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  visibility:hidden;
-  opacity:0;
-  transition:.4s;
+/* 3. سلاسة النافذة المنبثقة وتنسيقها */
+.modal {
+    /* الإعدادات الأساسية جيدة، لكن سنضيف transform */
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.4s ease, visibility 0.4s; /* سلاسة الإخفاء والظهور */
+    z-index: 9999;
 }
 
-.modal.is-visible{
-  visibility:visible;
-  opacity:1;
+.modal.is-visible {
+    visibility: visible;
+    opacity: 1;
 }
 
-.modal-overlay{
-  position:absolute;
-  inset:0;
-  background:rgba(0,0,0,.9);
+.modal-content {
+    /* الشكل العصري: حواف دائرية، مظهر عائم */
+    border-radius: 16px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+    padding: 30px;
+    
+    /* ⚡ التأثير السلس للحجم */
+    transform: scale(0.95); /* حجم أصغر قليلاً عند الإخفاء */
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* منحنى حركة سلس */
 }
 
-.modal-content{
-  position:relative;
-  max-width:900px;
-  width:90%;
-  max-height:85vh;
-  padding:25px;
-  overflow-y:auto;
-}
-.modal-details-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:20px;
+.modal.is-visible .modal-content {
+    transform: scale(1); /* الحجم الطبيعي عند الظهور */
 }
 
-.modal-image img{
-  width:100%;
-  height:280px;
-  object-fit:cover;
-  border-radius:10px;
+/* ترتيب محتوى البوكس */
+.modal-details-grid {
+    grid-template-columns: 1fr 1.5fr; /* إعطاء مساحة أكبر للنص */
+    gap: 25px;
+    text-align: right; /* محاذاة النص لليمين */
 }
 
-@media(max-width:700px){
+/* توسيط الصورة */
+.modal-image {
+    display: flex; /* لضمان التوسيط الرأسي والأفقي */
+    justify-content: center;
+    align-items: flex-start; /* تبدأ من الأعلى */
+}
+
+/* تقليل المسافات بين الأسطر (Line Height) */
+.modal-info p, .modal-info ul li {
+    line-height: 1.4; /* تقليل المسافة بين الأسطر */
+    margin-bottom: 8px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.modal-info h2, .modal-info h3 {
+    margin-top: 10px;
+    margin-bottom: 5px;
+}:700px){
   .modal-details-grid{
     grid-template-columns:1fr;
   }
