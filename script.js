@@ -129,7 +129,22 @@ window.moveSlider = function(direction) {
     const closeBtn = modal.querySelector('.close-btn');
     
     // ✅ التصحيح: استهداف أزرار السلايدر (.slide .btn) وأزرار الشبكة (.project-card .btn)
-    const projectBtns = document.querySelectorAll('.slide .btn, .project-card .btn'); 
+    document.addEventListener('click', function(e){
+  const btn = e.target.closest('.open-modal-btn');
+  if(!btn) return;
+
+  e.preventDefault();
+  const projectId = btn.dataset.projectId;
+  const projectDetails = siteData.projects.find(p => p.id === projectId);
+
+  if(projectDetails){
+    modalTitle.textContent = projectDetails.title;
+    modalImage.src = projectDetails.img;
+    modalCategory.textContent = projectDetails.desc;
+    openModal();
+  }
+});
+ 
     const modalTitle = modal.querySelector('.modal-title');
     const modalImage = modal.querySelector('.modal-image img');
     const modalCategory = modal.querySelector('.modal-category');
