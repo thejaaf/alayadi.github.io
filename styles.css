@@ -37,6 +37,18 @@ body{
 }
 
 /* Header */
+.site-header .container{
+  padding: 10px 20px; /* بدل 28px */
+}
+
+.brand-text h1{
+  font-size:16px;
+}
+
+.brand-text p{
+  font-size:11px;
+}
+
 .site-header{
   background:var(--black);
   position:sticky;
