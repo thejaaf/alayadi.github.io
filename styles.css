@@ -13,13 +13,20 @@
 
 html,body{height:100%}
 
-body{
-  margin:0;
-  font-family:var(--font);
-  color:var(--white);
-  background:linear-gradient(0deg,var(--gray),var(--gold));
-  -webkit-font-smoothing:antialiased;
-  line-height:1.6;
+/* 7. تحديث تدرج الخلفية */
+body {
+    /* التدرج القديم: background:linear-gradient(0deg,var(--gray),var(--gold)); كان انتقالاً حاداً */
+    
+    /* 💡 التدرج الجديد: أكثر نعومة بين النيلي (كـ Gray/Blue) والبرتقالي (Gold) */
+    background: linear-gradient(150deg, var(--gray) 0%, var(--gold) 100%);
+    
+    /* استخدام var(--gray) وهو #14366D (النيلي الداكن)
+       و var(--gold) وهو #DC6601 (البرتقالي) */
+    
+    /* لجعل الانتقال ضبابياً/متداخلاً أكثر: نستخدم زاوية مائلة (150deg)
+       ونتجنب نقاط التوقف الحادة في المنتصف */
+    background-attachment: fixed; /* للحفاظ على الخلفية ثابتة أثناء التمرير */
+    line-height: 1.6;
 }
 
 /* Card */
