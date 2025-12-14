@@ -11,22 +11,59 @@
 
 *{box-sizing:border-box}
 html,body{height:101%}
-body{
-  margin:0;
-  font-family:var(--font);
-  color:var(--white);
-  /* 🟢 استعادة تدريج الخلفية */
-  background:linear-gradient(0deg,var(--gray),#DC6601);
-  -webkit-font-smoothing:antialiased;
-  -moz-osx-font-smoothing:grayscale;
-  line-height:1.6;
+/* ====== ألوان النص الأساسية ====== */
+body {
+    color: var(--white); /* اللون الافتراضي للنص */
 }
-.card 
-{
-    background: rgba(20, 20, 20, 0.85);
-    backdrop-filter: blur(6px);
-    border-radius: 14px;
+
+/* العناوين */
+h1, h2, h3, h4, h5, h6 {
+    color: var(--white);
 }
+
+/* عناوين الأقسام */
+section h3,
+section h4 {
+    color: var(--gold);
+}
+
+/* نصوص وصفية */
+p,
+.section-desc,
+.project-card p,
+.company-card p {
+    color: #e0e8ff; /* أزرق فاتح */
+}
+
+/* روابط القائمة */
+.main-nav a {
+    color: var(--white);
+}
+
+/* روابط الفوتر */
+.footer-nav a {
+    color: #9bb6ff;
+}
+
+/* أرقام الإحصائيات */
+.stats li strong {
+    color: var(--gold);
+}
+
+.stats li span {
+    color: #cfd8ff;
+}
+
+/* نص المودال */
+.modal-info p,
+.modal-info li {
+    color: var(--white);
+}
+
+.modal-title {
+    color: var(--gold);
+}
+
 /* Container */
 .container{max-width:var(--container-max);margin:0 auto;padding:28px}
 
