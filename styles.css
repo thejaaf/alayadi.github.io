@@ -9,7 +9,9 @@
     --radius: 8px;
     --font: 'Cairo', sans-serif;
 }
-
+html {
+  scroll-behavior: smooth;
+}
 
 /* Reset عام */
 * {
