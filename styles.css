@@ -629,8 +629,18 @@ textarea {
     caret-color: auto;
 }
 /* حركة بسيطة للخلفية */
-@keyframes gentleGradient {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 0%; }
-    100% { background-position: 0% 0%; }
+@keyframes interactiveWave {
+    0% {
+        background-position: 0% 0%, 0% 0%;
+    }
+    50% {
+        background-position: 50% 50%, 100% 100%;
+    }
+    100% {
+        background-position: 0% 0%, 0% 0%;
+    }
+}
+
+body {
+    animation: interactiveWave 60s ease-in-out infinite;
 }
