@@ -55,7 +55,6 @@
             <h4>${p.title}</h4>
             <p>${p.desc}</p>
             <div class="actions">
-                <a class="btn open-modal-btn" href="#projects" data-project-id="${p.id}">عرض التفاصيل</a>
         `;
         projectsGrid.appendChild(card);
     });
