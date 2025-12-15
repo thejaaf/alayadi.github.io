@@ -2,12 +2,14 @@
     --black: #081F44;
     --gold: #DC6601;
     --white: #FFFFFF;
-    --gray: #14366D;
-    --muted: #1F3F74;
+    --gray: #14366D;   /* النيلي الكبير */
+    --muted: #1F3F74;  
+    --blue: #1E5FFF;   /* الأزرق الذي يمثل 20% من التدرج */
     --container-max: 1100px;
     --radius: 8px;
-    --font: 'Cairo', sans-serif; /* الخط الصحيح */
+    --font: 'Cairo', sans-serif;
 }
+
 
 /* Reset عام */
 * {
