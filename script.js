@@ -5,7 +5,7 @@
         aboutImage: 'https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&w=1000&q=80',
         stats: { projects: 24, companies: 7, beneficiaries: 12000, years: 11 },
         projects: [
-            { id: 'scolata', title: 'مجمع ايادي بسكولاتة', desc: 'موقع استراتيجي – خدمات متكاملة – مباني عصرية', img: 'https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&w=900&q=80', mapLink: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3334.431780258758!2d44.30696301369701!3d33.30752557298642!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x15577df6ad37cb9d%3A0x4bc1fe8cbe497016!2sHands%20residential%20complex!5e0!3m2!1sar!2siq!4v1765806202090!5m2!1sar!2siq" },
+            { id: 'scolata', title: 'مجمع ايادي بسكولاتة', desc: 'موقع استراتيجي – خدمات متكاملة – مباني عصرية', img: 'https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&w=900&q=80', mapLink: "https://maps.app.goo.gl/XntJ7RETJeggmg6TA" },
             { id: 'garden', title: 'ايادي كاردن سيتي / الدورة', desc: 'مدينة سكنية متكاملة مع مدارس وحدائق وخدمات', img: 'https://images.unsplash.com/photo-1482192505345-5655af888cc4?auto=format&fit=crop&w=900&q=80', mapLink: 'http://رابط-موقع-كاردن-سيتي-الفعلي.com' },
             { id: 'kadhimiya', title: 'مجمع ايادي الكاظمية', desc: 'وحدات سكنية حديثة قريبة من مركز بغداد', img: 'https://images.unsplash.com/photo-1505691723518-36a0f35c2d43?auto=format&fit=crop&w=900&q=80', mapLink: 'http://رابط-موقع-كاظمية-الفعلي.com' },
             { id: 'adal', title: 'مجمع ايادي العدل', desc: 'مشروع سكني راقٍ للعوائل وذوي الدخل المتوسط', img: 'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=900&q=80', mapLink: 'http://رابط-موقع-العدل-الفعلي.com' }
