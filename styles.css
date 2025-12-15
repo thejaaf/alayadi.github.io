@@ -594,3 +594,12 @@ p, .section-desc, .project-card p, .company-card p {
         display: block;
     }
 }
+/* إخفاء المؤشر من النصوص فقط، مع إبقاء المؤشر داخل الحقول */
+body {
+    caret-color: transparent;
+}
+
+input,
+textarea {
+    caret-color: auto;
+}
