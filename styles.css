@@ -19,9 +19,22 @@
 html, body {
     height: 100%;
     margin: 0;
-    background: linear-gradient(135deg, var(--gray), var(--gold));
-    background-size: 200% 200%; /* حجم الخلفية لتأثير الحركة */
-    animation: gentleGradient 60s ease infinite; /* حركة بطيئة جداً */
+    background: radial-gradient(circle at 30% 30%, rgba(20,54,109,0.85), rgba(20,54,109,1) 70%), 
+                linear-gradient(135deg, rgba(220,102,1,0.08) 0%, rgba(220,102,1,0.02) 100%);
+    background-size: cover;
+    background-attachment: fixed; /* يبقى الخلفية ثابتة */
+    color: var(--white);
+}
+
+/* حركة تموج خفيفة للخلفية */
+@keyframes gentleWave {
+    0% { background-position: 0% 0%, 0% 0%; }
+    50% { background-position: 50% 50%, 50% 50%; }
+    100% { background-position: 0% 0%, 0% 0%; }
+}
+
+body {
+    animation: gentleWave 120s ease-in-out infinite;
 }
 
 /* ====== النصوص ====== */
