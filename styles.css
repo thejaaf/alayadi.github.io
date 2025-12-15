@@ -361,7 +361,6 @@ p, .section-desc, .project-card p, .company-card p {
     border: 0;
     cursor: pointer;
     font-weight: 700;
-    
     text-decoration: none !important; /* ⬅️ التأكيد على إزالة الخطوط السفلية */
     transition: all 0.3s ease-in-out; /* إضافة حركة سلسة */
 }
@@ -568,4 +567,14 @@ p, .section-desc, .project-card p, .company-card p {
         max-width: 95%;
         padding: 15px;
     }
+}
+.project-card,
+.slide {
+    cursor: pointer;
+}
+
+.project-card:hover,
+.slide:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
 }
