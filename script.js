@@ -6,9 +6,9 @@
         stats: { projects: 24, companies: 7, beneficiaries: 12000, years: 11 },
         projects: [
             { id: 'scolata', title: 'مجمع ايادي بسكولاتة', desc: 'موقع استراتيجي – خدمات متكاملة – مباني عصرية', img: 'https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&w=900&q=80', mapLink: "https://maps.app.goo.gl/XntJ7RETJeggmg6TA" },
-            { id: 'garden', title: 'ايادي كاردن سيتي / الدورة', desc: 'مدينة سكنية متكاملة مع مدارس وحدائق وخدمات', img: 'https://images.unsplash.com/photo-1482192505345-5655af888cc4?auto=format&fit=crop&w=900&q=80', mapLink: 'http://رابط-موقع-كاردن-سيتي-الفعلي.com' },
-            { id: 'kadhimiya', title: 'مجمع ايادي الكاظمية', desc: 'وحدات سكنية حديثة قريبة من مركز بغداد', img: 'https://images.unsplash.com/photo-1505691723518-36a0f35c2d43?auto=format&fit=crop&w=900&q=80', mapLink: 'http://رابط-موقع-كاظمية-الفعلي.com' },
-            { id: 'adal', title: 'مجمع ايادي العدل', desc: 'مشروع سكني راقٍ للعوائل وذوي الدخل المتوسط', img: 'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=900&q=80', mapLink: 'http://رابط-موقع-العدل-الفعلي.com' }
+            { id: 'garden', title: 'ايادي كاردن سيتي / الدورة', desc: 'مدينة سكنية متكاملة مع مدارس وحدائق وخدمات', img: 'https://images.unsplash.com/photo-1482192505345-5655af888cc4?auto=format&fit=crop&w=900&q=80', mapLink: "https://maps.app.goo.gl/GvJPEiaDwGNQP5Nr5" },
+            { id: 'kadhimiya', title: 'مجمع ايادي الكاظمية', desc: 'وحدات سكنية حديثة قريبة من مركز بغداد', img: 'https://images.unsplash.com/photo-1505691723518-36a0f35c2d43?auto=format&fit=crop&w=900&q=80', mapLink: "https://maps.app.goo.gl/Qoehjt91YVB9vH4L9" },
+            { id: 'adal', title: 'مجمع ايادي العدل', desc: 'مشروع سكني راقٍ للعوائل وذوي الدخل المتوسط', img: 'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=900&q=80', mapLink: "https://maps.app.goo.gl/xstdSiEJt5WWvV8bA" }
         ],
         companies: [
             { id:'cement', title: 'شركة الإسمنت', desc:'مصنع حديث للإسمنت ليدعم مشاريع البناء', img:'https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=800&q=80' },
