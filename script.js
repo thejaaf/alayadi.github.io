@@ -155,22 +155,3 @@ document.addEventListener('click', function (e) {
         sliderElement.scrollTo({ left: currentPos, behavior: 'smooth' });
     }
 })();
-// Tabs
-document.querySelectorAll('.tab').forEach(tab => {
-  tab.addEventListener('click', () => {
-    document.querySelectorAll('.tab, .tab-content')
-      .forEach(el => el.classList.remove('active'));
-
-    tab.classList.add('active');
-    document.getElementById(tab.dataset.tab).classList.add('active');
-  });
-});
-
-// Accordion
-document.querySelectorAll('.acc-btn').forEach(btn => {
-  btn.addEventListener('click', () => {
-    const content = btn.nextElementSibling;
-    content.style.display =
-      content.style.display === 'block' ? 'none' : 'block';
-  });
-});
