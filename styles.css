@@ -350,13 +350,26 @@ p, .section-desc, .project-card p, .company-card p {
     background: #101010;
     color: var(--white);
 }
+/* Buttons */
 .btn {
-    background: var(--gold);
-    color: var(--black);
-    padding: 10px 14px;
-    border-radius: 8px;
-    border: 0;
-    cursor: pointer;
+    display: inline-block; /* مهم ليعمل الـ padding بشكل صحيح */
+    background: var(--gold);
+    color: var(--black);
+    padding: 10px 22px; /* 💡 جعل الزر أعرض قليلاً */
+    border-radius: 25px; /* 💡 جعل الحواف دائرية بالكامل */
+    border: 0;
+    cursor: pointer;
+    font-weight: 700;
+    
+    text-decoration: none !important; /* ⬅️ التأكيد على إزالة الخطوط السفلية */
+    transition: all 0.3s ease-in-out; /* إضافة حركة سلسة */
+}
+
+.btn:hover {
+    background: #ff8c00; /* درجة أغمق عند التحويم */
+    color: var(--white); /* تغيير لون النص عند التحويم */
+    box-shadow: 0 4px 15px rgba(220, 102, 1, 0.4);
+    transform: translateY(-2px); /* تأثير صعود طفيف */
 }
 
 /* Socials */
