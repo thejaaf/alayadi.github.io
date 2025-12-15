@@ -37,35 +37,25 @@
     document.getElementById('year').textContent = new Date().getFullYear();
 
     // render slider
-    const slider = document.getElementById('projectSlider');
-    slider.innerHTML = '';
     siteData.projects.slice(0,4).forEach(p=>{
         const slide = document.createElement('article');
-        slide.className = 'slide';
-        slide.dataset.projectId = p.id;
         slide.innerHTML = `
             <img src="${p.img}" alt="${p.title}" />
             <h4>${p.title}</h4>
             <p>${p.desc}</p>
-            <a class="btn open-modal-btn" href="#projects" data-project-id="${p.id}">عرض المشروع</a>
         `;
         slider.appendChild(slide);
     });
 
     // render projects grid
-    const projectsGrid = document.getElementById('projectsGrid');
-    projectsGrid.innerHTML = '';
     siteData.projects.forEach(p=>{
         const card = document.createElement('article');
-        card.className = 'project-card';
-        card.dataset.projectId = p.id;
         card.innerHTML = `
             <img src="${p.img}" alt="${p.title}" />
             <h4>${p.title}</h4>
             <p>${p.desc}</p>
             <div class="actions">
                 <a class="btn open-modal-btn" href="#projects" data-project-id="${p.id}">عرض التفاصيل</a>
-            </div>
         `;
         projectsGrid.appendChild(card);
     });
@@ -98,12 +88,16 @@
     const modal = document.getElementById('project-modal');
     const closeBtn = modal.querySelector('.close-btn');
 
-    document.addEventListener('click', function(e){
-        const btn = e.target.closest('.open-modal-btn');
-        if(!btn) return;
+// 💡 الكود الجديد: يستمع للنقر على البطاقة بالكامل (.slide أو .project-card)
+    document.addEventListener('click', function(e){
+        // نتحقق إذا كان النقر على عنصر من فئة .slide أو .project-card (البطاقة)
+        const card = e.target.closest('.slide, .project-card'); 
+
+        if(!card) return; // إذا لم تكن نقرة على بطاقة، نتجاهل
 
         e.preventDefault();
-        const projectId = btn.dataset.projectId;
+        
+        const projectId = card.dataset.projectId;
         const projectDetails = siteData.projects.find(p => p.id === projectId);
 
         if(projectDetails){
@@ -123,7 +117,7 @@
 
             openModal();
         }
-    });
+    });
 
     function openModal() {
         modal.classList.add('is-visible');
