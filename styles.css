@@ -410,6 +410,9 @@ p, .section-desc, .project-card p, .company-card p {
     .project-grid, .companies-grid {
         grid-template-columns: repeat(3,1fr);
     }
+    .nav-toggle {
+        display: none;
+    }
     .about-grid {
         grid-template-columns: 1fr;
     }
@@ -577,4 +580,17 @@ p, .section-desc, .project-card p, .company-card p {
 .slide:hover {
     transform: translateY(-4px);
     box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+}
+
+
+/* إخفاء زر القائمة على الحاسبة */
+.nav-toggle {
+    display: none;
+}
+
+/* إظهاره فقط على الهاتف */
+@media (max-width: 980px) {
+    .nav-toggle {
+        display: block;
+    }
 }
