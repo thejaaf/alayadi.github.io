@@ -47,7 +47,6 @@
             <img src="${p.img}" alt="${p.title}" />
             <h4>${p.title}</h4>
             <p>${p.desc}</p>
-            <a class="btn open-modal-btn" href="#projects" data-project-id="${p.id}">عرض المشروع</a>
         `;
         slider.appendChild(slide);
     });
@@ -64,8 +63,6 @@
             <h4>${p.title}</h4>
             <p>${p.desc}</p>
             <div class="actions">
-                <a class="btn open-modal-btn" href="#projects" data-project-id="${p.id}">عرض التفاصيل</a>
-            </div>
         `;
         projectsGrid.appendChild(card);
     });
@@ -98,32 +95,31 @@
     const modal = document.getElementById('project-modal');
     const closeBtn = modal.querySelector('.close-btn');
 
-    document.addEventListener('click', function(e){
-        const btn = e.target.closest('.open-modal-btn');
-        if(!btn) return;
+document.addEventListener('click', function (e) {
+    const card = e.target.closest('.project-card, .slide');
+    if (!card) return;
 
-        e.preventDefault();
-        const projectId = btn.dataset.projectId;
-        const projectDetails = siteData.projects.find(p => p.id === projectId);
+    const projectId = card.dataset.projectId;
+    const projectDetails = siteData.projects.find(p => p.id === projectId);
 
-        if(projectDetails){
-            const modalTitle = modal.querySelector('.modal-title');
-            const modalImage = modal.querySelector('.modal-image img');
-            const modalCategory = modal.querySelector('.modal-category');
-            const mapLinkBtn = modal.querySelector('.map-link');
+    if (projectDetails) {
+        const modalTitle = modal.querySelector('.modal-title');
+        const modalImage = modal.querySelector('.modal-image img');
+        const modalCategory = modal.querySelector('.modal-category');
+        const mapLinkBtn = modal.querySelector('.map-link');
 
-            modalTitle.textContent = projectDetails.title;
-            modalImage.src = projectDetails.img;
-            modalImage.alt = projectDetails.title;
-            modalCategory.textContent = projectDetails.desc;
+        modalTitle.textContent = projectDetails.title;
+        modalImage.src = projectDetails.img;
+        modalImage.alt = projectDetails.title;
+        modalCategory.textContent = projectDetails.desc;
 
-            if (mapLinkBtn && projectDetails.mapLink) {
-                mapLinkBtn.href = projectDetails.mapLink;
-            }
-
-            openModal();
+        if (mapLinkBtn && projectDetails.mapLink) {
+            mapLinkBtn.href = projectDetails.mapLink;
         }
-    });
+
+        openModal();
+    }
+});
 
     function openModal() {
         modal.classList.add('is-visible');
