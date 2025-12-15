@@ -111,7 +111,7 @@ p, .section-desc, .project-card p, .company-card p {
 .intro-section .hero-title {
     color: var(--gold); /* استخدام اللون الذهبي للعنوان الرئيسي */
     font-size: 30px; /* حجم عنوان جيد */
-    margin-bottom: 8px;
+    margin-bottom: 4px;
     margin-top: 0;
 }
 
@@ -119,7 +119,7 @@ p, .section-desc, .project-card p, .company-card p {
     color: var(--white); /* لون أبيض للنص الوصفي */
     font-size: 18px;
     max-width: 800px;
-    margin: 0 auto; /* توسيط الوصف */
+    margin: 4px auto 0 auto; /* توسيط الوصف */
 }
 
 /* ⚠️ مهم: تأكد أن تنسيق الـ Hero القديم لا يتعارض معه */
