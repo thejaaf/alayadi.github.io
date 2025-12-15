@@ -47,7 +47,8 @@
             <img src="${p.img}" alt="${p.title}" />
             <h4>${p.title}</h4>
             <p>${p.desc}</p>
-            <a class="btn open-modal-btn" href="#projects" data-project-id="${p.id}">عرض المشروع</a>
+    // مثال لزر داخل بطاقة مشروع في script.js:
+`<a class="btn open-modal-btn" href="#projects" data-project-id="${p.id}">عرض التفاصيل</a>`
         `;
         slider.appendChild(slide);
     });
