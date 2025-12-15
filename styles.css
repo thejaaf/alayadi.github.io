@@ -13,16 +13,14 @@
 * {
     box-sizing: border-box;
 }
+/* الخلفية المتدرجة بين النيلي والبرتقالي مع حركة بسيطة */
 html, body {
     height: 100%;
     margin: 0;
-    font-family: var(--font);
-    color: var(--white);
-    background: linear-gradient(135deg, #081F44, #14366D, #DC6601);
-    background-size: 600% 600%; /* تكبير المساحة للتدرج بدون تقطع */
-    animation: gradientMove 30s ease infinite; /* أبطأ من 15s لتغيير أهدأ */
+    background: linear-gradient(135deg, var(--gray), var(--gold));
+    background-size: 200% 200%; /* حجم الخلفية لتأثير الحركة */
+    animation: gentleGradient 60s ease infinite; /* حركة بطيئة جداً */
 }
-
 
 /* ====== النصوص ====== */
 h1, h2, h3, h4, h5, h6 {
@@ -606,7 +604,8 @@ input,
 textarea {
     caret-color: auto;
 }
-@keyframes gradientMove {
+/* حركة الخلفية */
+@keyframes gentleGradient {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
