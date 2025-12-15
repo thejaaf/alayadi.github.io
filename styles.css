@@ -19,15 +19,9 @@
 html, body {
     height: 100%;
     margin: 0;
-    /* تدرج من اليمين (برتقالي ذهبي) إلى اليسار (نيلي) */
-    background: linear-gradient(
-        to left,            /* التدرج من اليمين لليسار */
-        var(--gold) 0%,     /* البرتقالي الذهبي يبدأ عند 0% */
-        var(--gold) 20%,    /* البرتقالي يأخذ 20% */
-        var(--blue) 40%,    /* الأزرق من 20% إلى 40% */
-        var(--gray) 100%    /* النيلي من 40% إلى 100% */
-    );
-    background-size: cover; /* لتغطية كامل الشاشة */
+    background: linear-gradient(135deg, var(--gray), var(--gold));
+    background-size: 200% 200%; /* حجم الخلفية لتأثير الحركة */
+    animation: gentleGradient 60s ease infinite; /* حركة بطيئة جداً */
 }
 
 /* ====== النصوص ====== */
