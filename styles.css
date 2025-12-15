@@ -17,9 +17,12 @@
 html, body {
     height: 100%;
     margin: 0;
-    background: linear-gradient(135deg, var(--gray), var(--gold));
-    background-size: 200% 200%; /* حجم الخلفية لتأثير الحركة */
-    animation: gentleGradient 60s ease infinite; /* حركة بطيئة جداً */
+    /* تدرج من البرتقالي إلى النيلي، البرتقالي صغير جدًا */
+    background: linear-gradient(90deg, 
+                var(--gold) 20%,      /* البرتقالي يظهر كلمسة صغيرة فقط */
+                var(--gray) 80%);    /* النيلي يغطي 95% من العرض */
+    background-size: 200% 100%; /* لتوسيع الخلفية وتحريكها */
+    animation: slideGradient 180s linear infinite; /* حركة أفقية بطيئة جدًا */
 }
 
 /* ====== النصوص ====== */
