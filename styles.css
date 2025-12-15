@@ -28,24 +28,6 @@ html, body {
     overflow-x: hidden;
 }
 
-/* حركة تموج سلسة */
-@keyframes interactiveWave {
-    0% {
-        background-position: 0% 0%, 0% 0%;
-    }
-    50% {
-        background-position: 50% 50%, 100% 100%;
-    }
-    100% {
-        background-position: 0% 0%, 0% 0%;
-    }
-}
-
-body {
-    animation: interactiveWave 60s ease-in-out infinite;
-}
-
-
 /* ====== النصوص ====== */
 h1, h2, h3, h4, h5, h6 {
     color: var(--white);
