@@ -18,10 +18,11 @@ html, body {
     margin: 0;
     font-family: var(--font);
     color: var(--white);
-background: linear-gradient(135deg, var(--black), #14366D, var(--gold));
-background-size: 400% 400%;
-animation: gradientMove 15s ease infinite;
+    background: linear-gradient(135deg, #081F44, #14366D, #DC6601);
+    background-size: 600% 600%; /* تكبير المساحة للتدرج بدون تقطع */
+    animation: gradientMove 30s ease infinite; /* أبطأ من 15s لتغيير أهدأ */
 }
+
 
 /* ====== النصوص ====== */
 h1, h2, h3, h4, h5, h6 {
