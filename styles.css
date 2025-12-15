@@ -291,6 +291,7 @@ p, .section-desc, .project-card p, .company-card p {
     margin-top: 10px;
     display: flex;
     gap: 8px;
+    justify-content: center; /* 💡 إضافة توسيط أفقي للأزرار داخل البطاقة */
 }
 
 /* Companies Grid */
