@@ -17,9 +17,9 @@
 html, body {
     height: 100%;
     margin: 0;
-    background: linear-gradient(135deg, var(--gray), var(--gold));
-    background-size: 200% 200%; /* حجم الخلفية لتأثير الحركة */
-    animation: gentleGradient 60s ease infinite; /* حركة بطيئة جداً */
+    background: linear-gradient(90deg, var(--gold), var(--gray));
+    background-size: 200% 100%; /* تكبير الخلفية لعمل حركة */
+    animation: slideGradient 120s linear infinite; /* حركة أفقية بطيئة جدًا */
 }
 
 /* ====== النصوص ====== */
@@ -604,9 +604,9 @@ input,
 textarea {
     caret-color: auto;
 }
-/* حركة الخلفية */
-@keyframes gentleGradient {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+/* حركة بسيطة للخلفية */
+@keyframes slideGradient {
+    0% { background-position: 0% 0%; }
+    50% { background-position: 100% 0%; }
+    100% { background-position: 0% 0%; }
 }
