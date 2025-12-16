@@ -814,3 +814,12 @@ body {
         pointer-events: auto;
     }
 }
+/* إخفاء شريط التمرير مع بقاء خاصية السحب تعمل */
+.slider, .about-tabs {
+    -ms-overflow-style: none;  /* لمتصفح إنترنت إكسبلورر */
+    scrollbar-width: none;  /* لمتصفح فايرفوكس */
+}
+
+.slider::-webkit-scrollbar, .about-tabs::-webkit-scrollbar {
+    display: none; /* لمتصفحات كروم وسافاري */
+}
