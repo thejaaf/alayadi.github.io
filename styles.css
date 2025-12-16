@@ -196,6 +196,12 @@ p, .section-desc, .project-card p, .company-card p {
     -ms-overflow-style: none;
     scrollbar-width: none;
 }
+    direction: ltr;
+}
+.slide {
+    direction: rtl;
+}
+
 .slider::-webkit-scrollbar {
     display: none;
 }
@@ -220,7 +226,7 @@ p, .section-desc, .project-card p, .company-card p {
 /* Responsive Slider */
 @media (max-width: 640px) {
     .slider {
-        grid-auto-columns: 80vw;
+        grid-auto-columns: calc(100vw - 60px);
         gap: 12px;
     }
     .slide img {
@@ -681,6 +687,30 @@ textarea {
         background-position: 0% 0%, 0% 0%;
     }
 }
+/* =========================
+   FIX ABOUT TABS - MOBILE ONLY
+   ========================= */
+@media (max-width: 768px) {
+
+    .about-tabs {
+        position: relative;
+        z-index: 10; /* يمنع أي طبقة تغطيها */
+    }
+
+    .tab-btn {
+        pointer-events: auto; /* يضمن اللمس */
+        touch-action: manipulation; /* إصلاح النقر بالموبايل */
+        -webkit-tap-highlight-color: transparent;
+    }
+
+}
+@media (max-width: 768px) {
+    .about-content {
+        position: relative;
+        z-index: 5;
+    }
+}
+
 
 body {
     animation: interactiveWave 60s ease-in-out infinite;
