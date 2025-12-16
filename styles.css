@@ -670,82 +670,93 @@ body {
 }
 
 
+/* =======================================================
+   إصلاحات شاملة للموبايل فقط (تحت الـ 768 بكسل)
+   ======================================================= */
 @media (max-width: 768px) {
 
-    /* 1. إصلاح السلايدر المختفي */
+    /* 1. جعل مشاريعنا السكنية تظهر عمودين (2 Columns) */
+    .project-grid {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important; /* عمودين */
+        gap: 10px !important; /* مسافة بسيطة بين الكروت */
+        padding: 10px !important;
+    }
+
+    .project-card {
+        padding: 8px !important; /* تقليل الحشو ليتناسب مع العمودين */
+    }
+
+    .project-card img {
+        height: 120px !important; /* تقليل ارتفاع الصورة لتناسب الحجم الجديد */
+    }
+
+    .project-card h4 {
+        font-size: 14px !important; /* تصغير الخط قليلاً */
+        margin: 5px 0 !important;
+    }
+
+    /* 2. إصلاح السلايدر (جعله مرئياً وقابلاً للسحب) */
     .slider {
         display: flex !important;
         overflow-x: auto !important;
-        overflow-y: hidden !important;
+        grid-auto-flow: unset !important;
+        grid-auto-columns: unset !important;
         gap: 15px !important;
         padding: 10px 20px !important;
         -webkit-overflow-scrolling: touch !important;
     }
     .slide {
-        flex: 0 0 85vw !important; /* ضمان ظهور الكارت */
-        display: block !important;
+        flex: 0 0 85vw !important;
     }
 
-    /* 2. إصلاح النبذة والصورة والإحصائيات (منع الخروج من حدود الشاشة) */
-    .about-grid, .about, .intro-section, .container {
-        max-width: 100% !important;
-        overflow-x: hidden !important; /* منع السكرول الجانبي */
-        padding: 15px !important;
+    /* 3. منع الخروج عن حدود الشاشة (النبذة والإحصائيات) */
+    .about, .container, .intro-section, .about-grid {
+        max-width: 100vw !important;
+        overflow-x: hidden !important;
+        padding: 10px !important;
     }
     
-    .about-visual img {
-        width: 100% !important;
-        height: auto !important;
-        max-height: 250px !important;
-        object-fit: cover !important;
+    .about-grid {
+        display: flex !important;
+        flex-direction: column !important;
     }
 
     .stats {
         display: grid !important;
-        grid-template-columns: repeat(2, 1fr) !important; /* ترتيب 2×2 لكي لا تخرج من الشاشة */
-        gap: 10px !important;
-        width: 100% !important;
-    }
-    .stats li {
-        min-width: unset !important;
-        width: 100% !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 8px !important;
     }
 
-    /* 3. إصلاح أزرار النبذة (تفعيل اللمس) */
-    .tab-btn {
-        pointer-events: auto !important;
-        touch-action: manipulation !important;
-        z-index: 10 !important;
-    }
-
-    /* 4. إصلاح زر الإغلاق في النافذة المنبثقة (تنسيق فقط بدون تغيير شكل) */
+    /* 4. إصلاح النافذة المنبثقة (الترتيب وزر الإغلاق) */
     .modal-content {
         width: 95% !important;
-        padding: 20px !important;
-        margin: auto !important;
+        padding-top: 50px !important;
         position: relative !important;
-        overflow-y: auto !important;
     }
-    
+
     .close-btn {
         position: absolute !important;
         top: 10px !important;
         right: 10px !important;
         z-index: 9999 !important;
-        /* نترك الحجم والشكل كما هو في الحاسبة لكن نثبته في الزاوية */
     }
 
-    /* ترتيب النافذة (صورة ثم نص) */
     .modal-details-grid {
         display: flex !important;
         flex-direction: column !important;
-        gap: 15px !important;
     }
-    .modal-image { order: 1 !important; width: 100% !important; }
-    .modal-info { order: 2 !important; width: 100% !important; text-align: right !important; }
+    .modal-image { order: 1 !important; }
+    .modal-info { order: 2 !important; text-align: right !important; }
+
+    /* 5. تفعيل أزرار النبذة */
+    .tab-btn {
+        pointer-events: auto !important;
+        z-index: 50 !important;
+    }
 }
 
-/* حل مشكلة تداخل طبقة Hero اللي تمنع الضغط على الأزرار */
+/* حل مشكلة الغطاء الشفاف للـ Hero */
 @media (max-width: 768px) {
     .hero .overlay {
         pointer-events: none !important;
