@@ -443,6 +443,63 @@ p, .section-desc, .project-card p, .company-card p {
         font-size: 28px;
     }
 }
+/* ===== About Tabs ===== */
+.about-tabs {
+    display: flex;
+    gap: 10px;
+    margin: 15px 0;
+    flex-wrap: wrap;
+}
+
+.tab-btn {
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.15);
+    color: var(--white);
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-family: var(--font);
+    transition: all 0.3s ease;
+    font-size: 14px;
+}
+
+.tab-btn.active,
+.tab-btn:hover {
+    background: var(--gold);
+    color: var(--black);
+    border-color: var(--gold);
+}
+
+.about-content {
+    margin-top: 12px;
+    min-height: 140px; /* يمنع القفز */
+}
+
+.tab-content {
+    display: none;
+    animation: fadeIn 0.4s ease;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.tab-content p {
+    line-height: 1.8;
+    color: #e0e8ff;
+    font-size: 14px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(6px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
 /* Modal */
 .modal {
