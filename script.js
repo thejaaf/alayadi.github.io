@@ -69,17 +69,20 @@
 
     // render companies
     const companiesGrid = document.getElementById('companiesGrid');
-    companiesGrid.innerHTML = '';
-    siteData.companies.forEach(c=>{
-        const card = document.createElement('div');
-        card.className = 'company-card';
-        card.innerHTML = `
-            <img src="${c.img}" alt="${c.title}" />
-            <h5>${c.title}</h5>
-            <p>${c.desc}</p>
-        `;
-        companiesGrid.appendChild(card);
-    });
+    if (companiesGrid) {
+        companiesGrid.innerHTML = '';
+        siteData.companies.forEach(c => {
+            const card = document.createElement('div');
+            card.className = 'company-card';
+            card.dataset.projectId = c.id; // هذا السطر ضروري جداً للربط
+            card.innerHTML = `
+                <img src="${c.img}" alt="${c.title}" />
+                <h5>${c.title}</h5>
+                <p>${c.desc}</p>
+            `;
+            companiesGrid.appendChild(card);
+        });
+    }
 
     // mobile nav toggle
     const navToggle = document.querySelector('.nav-toggle');
@@ -96,31 +99,30 @@
     const closeBtn = modal.querySelector('.close-btn');
 
 document.addEventListener('click', function (e) {
-    const card = e.target.closest('.project-card, .slide');
-    if (!card) return;
+    // التعديل هنا: أضفنا .company-card لكي يتحسس النقر عليها
+    const card = e.target.closest('.project-card, .slide, .company-card');
+    if (!card || !modal) return;
 
-    const projectId = card.dataset.projectId;
-    const projectDetails = siteData.projects.find(p => p.id === projectId);
+    const id = card.dataset.projectId;
+    
+    // التعديل هنا: يبحث في قائمة المشاريع "أو" قائمة الشركات
+    const details = siteData.projects.find(p => p.id === id) || siteData.companies.find(c => c.id === id);
 
-    if (projectDetails) {
-        const modalTitle = modal.querySelector('.modal-title');
-        const modalImage = modal.querySelector('.modal-image img');
-        const modalCategory = modal.querySelector('.modal-category');
+    if (details) {
+        modal.querySelector('.modal-title').textContent = details.title;
+        modal.querySelector('.modal-image img').src = details.img;
+        modal.querySelector('.modal-category').textContent = details.desc;
+        
         const mapLinkBtn = modal.querySelector('.map-link');
-
-        modalTitle.textContent = projectDetails.title;
-        modalImage.src = projectDetails.img;
-        modalImage.alt = projectDetails.title;
-        modalCategory.textContent = projectDetails.desc;
-
-        if (mapLinkBtn && projectDetails.mapLink) {
-            mapLinkBtn.href = projectDetails.mapLink;
+        if (mapLinkBtn) {
+            // إذا كان لشركة (لا يوجد رابط خريطة) سيختفي الزر، وإذا كان لمشروع سيظهر
+            mapLinkBtn.style.display = details.mapLink ? 'inline-block' : 'none';
+            if (details.mapLink) mapLinkBtn.href = details.mapLink;
         }
 
         openModal();
     }
 });
-
     function openModal() {
         modal.classList.add('is-visible');
         document.body.style.overflow = 'hidden';
