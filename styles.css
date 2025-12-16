@@ -812,3 +812,71 @@ body {
     font-size: 11px !important;
     line-height: 1.3 !important;
 }
+/* =======================================================
+   توحيد تصميم البطاقات (مشاريع + شركات) لتطابق السلايدر
+   ======================================================= */
+
+/* 1. التنسيق العام (يطبق على الحاسوب أولاً) */
+.project-card, .company-card {
+    background: linear-gradient(180deg,#111,#1a1a1a) !important; /* نفس خلفية السلايدر */
+    border-radius: 12px !important; /* نفس استدارة السلايدر */
+    padding: 14px !important; /* نفس حشو السلايدر الداخلي */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5) !important;
+    border: 1px solid rgba(200,160,79,0.08) !important;
+    transition: transform 0.3s ease !important;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+}
+
+/* توحيد الصور داخل البطاقات */
+.project-card img, .company-card img {
+    width: 100% !important;
+    height: 220px !important; /* نفس ارتفاع صورة السلايدر بالحاسوب */
+    object-fit: cover !important;
+    border-radius: 8px !important;
+    margin-bottom: 8px !important;
+}
+
+/* توحيد العناوين */
+.project-card h4, .company-card h5 {
+    font-size: 18px !important;
+    margin: 10px 0 6px !important;
+    color: var(--white) !important;
+}
+
+/* 2. تعديلات الهاتف (لضمان بقاء الشكل مطابقاً لسلايدر الموبايل) */
+@media (max-width: 768px) {
+    /* جعل الشبكة (Grid) عمودين للمشاريع والشركات */
+    .project-grid, .companies-grid {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 12px !important;
+        padding: 10px !important;
+    }
+
+    .project-card, .company-card {
+        padding: 10px !important; /* تقليل الحشو قليلاً للموبايل */
+        max-height: unset !important; /* السماح للبطاقة بالتمدد حسب النص */
+    }
+
+    /* موازنة ارتفاع الصور في الموبايل لتطابق السلايدر */
+    .project-card img, .company-card img {
+        height: 140px !important; 
+    }
+
+    .project-card h4, .company-card h5 {
+        font-size: 14px !important; /* خط أنعم للموبايل */
+    }
+
+    .project-card p, .company-card p {
+        font-size: 12px !important;
+        line-height: 1.4 !important;
+    }
+}
+
+/* تأثير التحويم (Hover) الموحد */
+.project-card:hover, .company-card:hover {
+    transform: translateY(-5px) !important;
+    border-color: var(--gold) !important;
+}
