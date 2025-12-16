@@ -218,11 +218,6 @@ p, .section-desc, .project-card p, .company-card p {
 }
 
 /* Responsive Slider */
-@media (max-width: 640px) {
-    .slider {
-        grid-auto-columns: 80vw;
-        gap: 12px;
-    }
     .slide img {
         height: 160px;
     }
@@ -625,18 +620,6 @@ p, .section-desc, .project-card p, .company-card p {
     margin-top: 15px;
     display: inline-block;
 }
-@media (max-width: 768px) {
-    .modal-details-grid {
-        grid-template-columns: 1fr;
-    }
-    .modal-image img {
-        height: 200px;
-    }
-    .modal-content {
-        max-width: 95%;
-        padding: 15px;
-    }
-}
 .project-card,
 .slide {
     cursor: pointer;
@@ -684,4 +667,90 @@ textarea {
 
 body {
     animation: interactiveWave 60s ease-in-out infinite;
+}
+
+
+@media (max-width: 768px) {
+
+    /* 1. إصلاح السلايدر المختفي */
+    .slider {
+        display: flex !important;
+        overflow-x: auto !important;
+        overflow-y: hidden !important;
+        gap: 15px !important;
+        padding: 10px 20px !important;
+        -webkit-overflow-scrolling: touch !important;
+    }
+    .slide {
+        flex: 0 0 85vw !important; /* ضمان ظهور الكارت */
+        display: block !important;
+    }
+
+    /* 2. إصلاح النبذة والصورة والإحصائيات (منع الخروج من حدود الشاشة) */
+    .about-grid, .about, .intro-section, .container {
+        max-width: 100% !important;
+        overflow-x: hidden !important; /* منع السكرول الجانبي */
+        padding: 15px !important;
+    }
+    
+    .about-visual img {
+        width: 100% !important;
+        height: auto !important;
+        max-height: 250px !important;
+        object-fit: cover !important;
+    }
+
+    .stats {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important; /* ترتيب 2×2 لكي لا تخرج من الشاشة */
+        gap: 10px !important;
+        width: 100% !important;
+    }
+    .stats li {
+        min-width: unset !important;
+        width: 100% !important;
+    }
+
+    /* 3. إصلاح أزرار النبذة (تفعيل اللمس) */
+    .tab-btn {
+        pointer-events: auto !important;
+        touch-action: manipulation !important;
+        z-index: 10 !important;
+    }
+
+    /* 4. إصلاح زر الإغلاق في النافذة المنبثقة (تنسيق فقط بدون تغيير شكل) */
+    .modal-content {
+        width: 95% !important;
+        padding: 20px !important;
+        margin: auto !important;
+        position: relative !important;
+        overflow-y: auto !important;
+    }
+    
+    .close-btn {
+        position: absolute !important;
+        top: 10px !important;
+        right: 10px !important;
+        z-index: 9999 !important;
+        /* نترك الحجم والشكل كما هو في الحاسبة لكن نثبته في الزاوية */
+    }
+
+    /* ترتيب النافذة (صورة ثم نص) */
+    .modal-details-grid {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 15px !important;
+    }
+    .modal-image { order: 1 !important; width: 100% !important; }
+    .modal-info { order: 2 !important; width: 100% !important; text-align: right !important; }
+}
+
+/* حل مشكلة تداخل طبقة Hero اللي تمنع الضغط على الأزرار */
+@media (max-width: 768px) {
+    .hero .overlay {
+        pointer-events: none !important;
+    }
+    .cta, .nav-toggle, .tab-btn, .project-card, .close-btn {
+        pointer-events: auto !important;
+    }
 }
