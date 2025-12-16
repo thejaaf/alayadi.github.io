@@ -744,3 +744,73 @@ body {
     }
 
 }
+/* تنسيق زر الإغلاق في الموبايل */
+@media (max-width: 768px) {
+    .modal-content {
+        padding: 40px 15px 20px 15px; /* زيادة التباعد العلوي لترك مساحة للزر */
+        position: relative;
+    }
+
+    .close-btn {
+        top: 10px !important;
+        right: 10px !important;
+        width: 40px !important; /* تكبير الزر قليلاً ليسهل الضغط عليه باللمس */
+        height: 40px !important;
+        font-size: 24px !important;
+        border-radius: 50% !important;
+        background: var(--gold) !important;
+        color: var(--black) !important;
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        border: 2px solid rgba(255,255,255,0.1) !important;
+        cursor: pointer;
+        z-index: 1005; /* التأكد من أنه فوق كل شيء */
+    }
+
+    /* تحسين شكل نافذة المعلومات في الموبايل */
+    .modal-info {
+        text-align: center; /* توسيط النصوص في الموبايل لتبدو أجمل */
+        margin-top: 15px;
+    }
+
+    .modal-info li {
+        padding-right: 0;
+        padding-bottom: 5px;
+        list-style-type: none;
+    }
+    
+    .modal-info li::before {
+        position: static; /* إلغاء التموضع القديم للنجمة */
+        margin-left: 5px;
+    }
+}
+
+/* إصلاحات نهائية لضمان عمل السلايدر والأزرار في الموبايل */
+@media (max-width: 768px) {
+    /* تأكيد ظهور السلايدر ومنع اختفائه */
+    .slider {
+        display: flex !important; /* يحول السلايدر من نظام الشبكة إلى الصف المرن */
+        grid-auto-flow: unset;
+        grid-auto-columns: unset;
+        overflow-x: auto !important;
+        overflow-y: hidden;
+        gap: 15px;
+        -webkit-overflow-scrolling: touch; /* سحب ناعم جداً للأصابع */
+    }
+
+    .slide {
+        flex: 0 0 280px !important; /* يحدد عرض الكارت الواحد ويمنعه من الاختفاء */
+    }
+
+    /* إصلاح تداخل طبقة البانر مع الأزرار */
+    .hero, .hero .overlay {
+        pointer-events: none; /* يسمح للنقرات بالمرور لما تحتها */
+    }
+    
+    /* استثناء الأزرار والروابط لتعود قابلة للضغط */
+    .cta, .main-nav a, .nav-toggle, .tab-btn, .project-card, .slide {
+        pointer-events: auto;
+    }
+}
