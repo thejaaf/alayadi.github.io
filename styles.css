@@ -823,3 +823,57 @@ body {
 .slider::-webkit-scrollbar, .about-tabs::-webkit-scrollbar {
     display: none; /* لمتصفحات كروم وسافاري */
 }
+/* الحل النهائي والجذري لزر الإغلاق على الهاتف */
+@media (max-width: 768px) {
+    /* 1. جعل النافذة المحتوية أساساً للتموضع */
+    .modal-content {
+        padding-top: 60px !important; /* توفير مساحة كافية للزر في الأعلى */
+        position: relative !important;
+        overflow-y: auto !important;
+    }
+
+    /* 2. تنسيق الزر بشكل عائم ومنفصل تماماً */
+    .close-btn {
+        position: absolute !important;
+        top: 15px !important;    /* المسافة من الأعلى */
+        right: 15px !important;  /* المسافة من اليمين */
+        width: 45px !important;  /* عرض دائرة الزر */
+        height: 45px !important; /* طول دائرة الزر */
+        
+        /* جعل الزر دائري ومنتصف النص */
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        
+        /* الألوان والبروز */
+        background-color: var(--gold) !important;
+        color: white !important;
+        border-radius: 50% !important;
+        font-size: 30px !important;
+        line-height: 0 !important;
+        
+        /* الطبقات والظل لضمان الظهور فوق الصورة */
+        z-index: 9999 !important;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.6) !important;
+        border: 2px solid rgba(255,255,255,0.2) !important;
+        cursor: pointer !important;
+    }
+
+    /* 3. تصحيح تداخل الصورة مع الزر */
+    .modal-details-grid {
+        display: flex !important;
+        flex-direction: column !important;
+    }
+
+    .modal-image {
+        order: 1 !important; /* الصورة أولاً */
+        width: 100% !important;
+        margin-top: 10px;
+    }
+
+    .modal-image img {
+        height: auto !important;
+        max-height: 250px !important;
+        border-radius: 8px;
+    }
+}
