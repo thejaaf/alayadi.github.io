@@ -201,26 +201,6 @@
 <script src="script.js"></script>
 </body>
 </html>
-// =======================================================
-// Smooth Scroll لأزرار القائمة
-// =======================================================
-<script>
-const mainNavLinks = document.querySelectorAll('.main-nav a[href^="#"]');
-
-mainNavLinks.forEach(link => {
-    link.addEventListener('click', function(e) {
-        e.preventDefault(); // منع الانتقال الافتراضي
-        const targetId = this.getAttribute('href').substring(1); // إزالة #
-        const target = document.getElementById(targetId);
-        if (target) {
-            target.scrollIntoView({ behavior: 'smooth' }); // التمرير السلس
-        }
-
-        // إذا كانت القائمة مفتوحة في الهاتف، أغلقها بعد الضغط
-        const mainNav = document.querySelector('.main-nav');
-        if (mainNav.style.display === 'block') {
-            mainNav.style.display = '';
-          <script>
         }
     });
 });
