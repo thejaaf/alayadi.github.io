@@ -780,3 +780,35 @@ body {
         pointer-events: auto !important;
     }
 }
+/* توحيد تنسيق الشركات والمعامل في الموبايل */
+.companies-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important; /* عمودين */
+    gap: 10px !important;
+    padding: 5px !important;
+}
+
+.company-card {
+    padding: 8px !important;
+    border-radius: 6px !important;
+    cursor: pointer; /* لإظهار أنها قابلة للضغط */
+    transition: transform 0.3s;
+}
+
+.company-card img {
+    height: 100px !important; /* نفس ارتفاع صور المشاريع */
+    width: 100% !important;
+    object-fit: cover !important;
+    border-radius: 4px !important;
+}
+
+.company-card h5 {
+    font-size: 13px !important;
+    margin: 5px 0 !important;
+    color: var(--gold);
+}
+
+.company-card p {
+    font-size: 11px !important;
+    line-height: 1.3 !important;
+}
