@@ -195,7 +195,6 @@ p, .section-desc, .project-card p, .company-card p {
     padding: 18px;
     -ms-overflow-style: none;
     scrollbar-width: none;
-}
     direction: ltr;
 }
 .slide {
@@ -714,4 +713,34 @@ textarea {
 
 body {
     animation: interactiveWave 60s ease-in-out infinite;
+}
+
+/* =========================
+   FIX ABOUT SECTION - MOBILE ONLY
+   ========================= */
+@media (max-width: 768px) {
+
+    .about-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .about-visual img {
+        width: 100%;
+        height: auto;
+        max-height: 240px;
+        object-fit: cover;
+    }
+
+    .stats {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .stats li {
+        min-width: 140px;
+        margin-bottom: 10px;
+    }
+
 }
