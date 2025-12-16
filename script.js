@@ -1,5 +1,27 @@
 /* script.js — بسيط لإظهار البيانات الممكن تعديلها من لوحة الإدارة (localStorage) */
 (function() {
+    // ===== Language Switcher =====
+function setLanguage(lang) {
+    document.querySelectorAll('.lang').forEach(el => {
+        el.classList.remove('active');
+        if (el.getAttribute('data-lang') === lang) {
+            el.classList.add('active');
+        }
+    });
+
+    // تغيير اتجاه الصفحة للغة العربية أو العبرية (RTL / LTR)
+    if (lang === 'ar' || lang === 'he') {
+        document.documentElement.setAttribute('dir', 'rtl');
+        document.documentElement.setAttribute('lang', lang);
+    } else {
+        document.documentElement.setAttribute('dir', 'ltr');
+        document.documentElement.setAttribute('lang', lang);
+    }
+}
+
+// افتراضيًا اللغة العربية
+setLanguage('ar');
+
     const defaults = {
         heroImage: 'https://images.unsplash.com/photo-1508057198894-247b23fe5ade?auto=format&fit=crop&w=1600&q=80',
         aboutImage: 'https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&w=1000&q=80',
