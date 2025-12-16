@@ -110,11 +110,17 @@ p, .section-desc, .project-card p, .company-card p {
 }
 
 /* HERO */
-/* 💡 التنسيق الجديد لقسم مقدمة السلايدر */
+/* ابحث عن هذا الجزء وعدله هكذا */
 .intro-section {
-    text-align: center; /* توسيط النص */
-    padding: 40px 20px 0 20px; /* مسافة داخلية جيدة */
-    margin-bottom: 20px;
+    text-align: right !important; 
+    direction: rtl;              
+    padding: 40px 28px 0 28px; /* تأكد من وجود حشو جانبي لكي لا يلتصق النص بحافة الشاشة */
+}
+
+.intro-section .hero-sub {
+    margin-right: 0 !important;   
+    margin-left: auto !important; 
+    max-width: 800px; /* يحافظ على طول سطر مريح للعين */
 }
 
 .intro-section .hero-title {
@@ -770,6 +776,10 @@ body {
     }
     .slide {
         flex: 0 0 75vw !important; /* عرض الكارت 75% من الشاشة ليكون مريحاً */
+    }
+    .intro-section {
+        text-align: right !important;
+        padding: 20px 15px !important;
     }
 }
 
