@@ -21,6 +21,13 @@ function setLanguage(lang) {
 
 // افتراضيًا اللغة العربية
 setLanguage('ar');
+    const languages = ['ar', 'en', 'es', 'ru', 'fr', 'de', 'zh'];
+let currentIndex = 0;
+
+document.getElementById('lang-toggle').addEventListener('click', () => {
+    currentIndex = (currentIndex + 1) % languages.length;
+    setLanguage(languages[currentIndex]);
+});
 
     const defaults = {
         heroImage: 'https://images.unsplash.com/photo-1508057198894-247b23fe5ade?auto=format&fit=crop&w=1600&q=80',
