@@ -9,6 +9,17 @@
     --radius: 8px;
     --font: 'Cairo', sans-serif;
 }
+/* إخفاء شريط التمرير الجانبي بالكامل */
+html, body {
+    scrollbar-width: none; /* لمتصفح فايرفوكس */
+    -ms-overflow-style: none; /* لمتصفح إنترنت إكسبلورر وإيدج القديم */
+}
+
+/* لمتصفحات كروم وسافاري (Chrome, Safari, Edge الحديث) */
+html::-webkit-scrollbar, 
+body::-webkit-scrollbar {
+    display: none;
+}
 html {
   scroll-behavior: smooth;
 }
