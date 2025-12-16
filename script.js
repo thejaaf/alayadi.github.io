@@ -154,4 +154,27 @@ document.addEventListener('click', function (e) {
         currentPos = Math.max(0, Math.min(currentPos, maxScroll));
         sliderElement.scrollTo({ left: currentPos, behavior: 'smooth' });
     }
+        // ======================
+    // About section tabs
+    // ======================
+    const aboutSection = document.getElementById('about');
+
+    if (aboutSection) {
+        const tabButtons = aboutSection.querySelectorAll('.tab-btn');
+        const tabContents = aboutSection.querySelectorAll('.tab-content');
+
+        tabButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const targetId = btn.getAttribute('data-tab');
+
+                tabButtons.forEach(b => b.classList.remove('active'));
+                tabContents.forEach(c => c.classList.remove('active'));
+
+                btn.classList.add('active');
+                const targetContent = document.getElementById(targetId);
+                if (targetContent) targetContent.classList.add('active');
+            });
+        });
+    }
+
 })();
